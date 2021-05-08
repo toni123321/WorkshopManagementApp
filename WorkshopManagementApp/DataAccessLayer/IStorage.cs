@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DataAccessLayer
 {
-    public interface IStorageAccess
+    public interface IStorage
     {
         void Create(Object obj);
         Object Read(Object identifier);

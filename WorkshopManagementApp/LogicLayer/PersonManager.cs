@@ -10,7 +10,7 @@ namespace LogicLayer
     public class PersonManager
     {
         private List<Person> people;
-        private IStorageAccess storage;
+        private IStorage storage;
 
         public PersonManager()
         {

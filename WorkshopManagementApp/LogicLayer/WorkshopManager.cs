@@ -9,7 +9,7 @@ namespace LogicLayer
     public class WorkshopManager
     {
         private List<Workshop> workshops;
-        private IStorageAccess storage;
+        private IStorage storage;
 
         public WorkshopManager()
         {
@@ -128,9 +128,10 @@ namespace LogicLayer
             return GetSpecificWorkshops("online");
         }
 
-        public void GeneratePrintableFileForAvailableWorkshops(string filename)
+        public void GeneratePrintableFileForAvailableWorkshops(string path)
         {
-
+            IStorage fileStorage = new WorkshopTextFileManager(path);
+            fileStorage.Create(GetAvailableWorkshops());
         }
     }
 }

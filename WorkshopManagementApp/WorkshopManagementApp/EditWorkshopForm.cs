@@ -290,6 +290,12 @@ namespace WorkshopManagementApp
             }
         }
 
+        public void ManageSelectedTab()
+        {
+            tabControlWorkshopMenu.SelectedIndex = 1;
+            UpdateLbxPeople(organisation.PersonManager.GetAllPeople());
+        }
+
        
     }
 }

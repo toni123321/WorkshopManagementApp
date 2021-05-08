@@ -6,7 +6,7 @@ using System.Text;
 
 namespace DataAccessLayer
 {
-    public abstract class DbAccess: IStorageAccess
+    public abstract class DbStorage: IStorage
     {
         public string DbConnectionStr
         {
@@ -20,7 +20,7 @@ namespace DataAccessLayer
             set;
         }
 
-        protected DbAccess(string dbConnectionStr)
+        protected DbStorage(string dbConnectionStr)
         {
             this.DbConnectionStr = dbConnectionStr;
         }
