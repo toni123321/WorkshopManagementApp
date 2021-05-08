@@ -9,7 +9,7 @@ namespace LogicLayer
     public class WorkshopPersonManager
     {
         private List<WorkshopPerson> workshopPeople;
-        private IStorageAccess storage;
+        private IStorage storage;
         private WorkshopManager workshopManager = new WorkshopManager();
 
 

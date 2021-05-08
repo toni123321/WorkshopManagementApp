@@ -7,7 +7,7 @@ using MySql.Data.MySqlClient;
 
 namespace DataAccessLayer
 {
-    public class WorkshopPersonDbManager: DbAccess
+    public class WorkshopPersonDbManager: DbStorage
     {
         public WorkshopPersonDbManager(string dbConnectionStr) : base(dbConnectionStr)
         {

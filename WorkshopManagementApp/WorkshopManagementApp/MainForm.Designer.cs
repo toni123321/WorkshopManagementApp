@@ -49,8 +49,6 @@ namespace WorkshopManagementApp
             this.lbShortDescription = new System.Windows.Forms.Label();
             this.tbxTitle = new System.Windows.Forms.TextBox();
             this.lbTitle = new System.Windows.Forms.Label();
-            this.tbxId = new System.Windows.Forms.TextBox();
-            this.lbId = new System.Windows.Forms.Label();
             this.tabPageManageWorkshops = new System.Windows.Forms.TabPage();
             this.btnFinishWorkshop = new System.Windows.Forms.Button();
             this.gbxFilterWorkshops = new System.Windows.Forms.GroupBox();
@@ -82,6 +80,7 @@ namespace WorkshopManagementApp
             this.btnRemovePerson = new System.Windows.Forms.Button();
             this.btnEditPerson = new System.Windows.Forms.Button();
             this.lbxPeople = new System.Windows.Forms.ListBox();
+            this.btnGeneratePrintableFileAvailableWorkshops = new System.Windows.Forms.Button();
             this.tabControlMainMenu.SuspendLayout();
             this.tabPageWorkshops.SuspendLayout();
             this.tabControlWorkshopMenu.SuspendLayout();
@@ -180,8 +179,6 @@ namespace WorkshopManagementApp
             this.gbxCreateWorkshop.Controls.Add(this.lbShortDescription);
             this.gbxCreateWorkshop.Controls.Add(this.tbxTitle);
             this.gbxCreateWorkshop.Controls.Add(this.lbTitle);
-            this.gbxCreateWorkshop.Controls.Add(this.tbxId);
-            this.gbxCreateWorkshop.Controls.Add(this.lbId);
             this.gbxCreateWorkshop.Location = new System.Drawing.Point(93, 126);
             this.gbxCreateWorkshop.Name = "gbxCreateWorkshop";
             this.gbxCreateWorkshop.Size = new System.Drawing.Size(812, 375);
@@ -191,7 +188,7 @@ namespace WorkshopManagementApp
             // 
             // tbxUrl
             // 
-            this.tbxUrl.Location = new System.Drawing.Point(165, 269);
+            this.tbxUrl.Location = new System.Drawing.Point(174, 249);
             this.tbxUrl.Name = "tbxUrl";
             this.tbxUrl.Size = new System.Drawing.Size(202, 26);
             this.tbxUrl.TabIndex = 6;
@@ -199,7 +196,7 @@ namespace WorkshopManagementApp
             // lbUrl
             // 
             this.lbUrl.AutoSize = true;
-            this.lbUrl.Location = new System.Drawing.Point(97, 272);
+            this.lbUrl.Location = new System.Drawing.Point(106, 252);
             this.lbUrl.Name = "lbUrl";
             this.lbUrl.Size = new System.Drawing.Size(46, 20);
             this.lbUrl.TabIndex = 6;
@@ -207,7 +204,7 @@ namespace WorkshopManagementApp
             // 
             // tbxRoomNum
             // 
-            this.tbxRoomNum.Location = new System.Drawing.Point(165, 224);
+            this.tbxRoomNum.Location = new System.Drawing.Point(174, 204);
             this.tbxRoomNum.Name = "tbxRoomNum";
             this.tbxRoomNum.Size = new System.Drawing.Size(202, 26);
             this.tbxRoomNum.TabIndex = 5;
@@ -215,7 +212,7 @@ namespace WorkshopManagementApp
             // lbRoomNum
             // 
             this.lbRoomNum.AutoSize = true;
-            this.lbRoomNum.Location = new System.Drawing.Point(38, 230);
+            this.lbRoomNum.Location = new System.Drawing.Point(47, 210);
             this.lbRoomNum.Name = "lbRoomNum";
             this.lbRoomNum.Size = new System.Drawing.Size(105, 20);
             this.lbRoomNum.TabIndex = 5;
@@ -223,7 +220,7 @@ namespace WorkshopManagementApp
             // 
             // tbxAddress
             // 
-            this.tbxAddress.Location = new System.Drawing.Point(165, 180);
+            this.tbxAddress.Location = new System.Drawing.Point(174, 160);
             this.tbxAddress.Name = "tbxAddress";
             this.tbxAddress.Size = new System.Drawing.Size(202, 26);
             this.tbxAddress.TabIndex = 4;
@@ -231,7 +228,7 @@ namespace WorkshopManagementApp
             // lbAddress
             // 
             this.lbAddress.AutoSize = true;
-            this.lbAddress.Location = new System.Drawing.Point(71, 186);
+            this.lbAddress.Location = new System.Drawing.Point(80, 166);
             this.lbAddress.Name = "lbAddress";
             this.lbAddress.Size = new System.Drawing.Size(72, 20);
             this.lbAddress.TabIndex = 4;
@@ -249,7 +246,7 @@ namespace WorkshopManagementApp
             // 
             // tbxCapacity
             // 
-            this.tbxCapacity.Location = new System.Drawing.Point(165, 135);
+            this.tbxCapacity.Location = new System.Drawing.Point(174, 115);
             this.tbxCapacity.Name = "tbxCapacity";
             this.tbxCapacity.Size = new System.Drawing.Size(202, 26);
             this.tbxCapacity.TabIndex = 3;
@@ -257,7 +254,7 @@ namespace WorkshopManagementApp
             // lbCapacity
             // 
             this.lbCapacity.AutoSize = true;
-            this.lbCapacity.Location = new System.Drawing.Point(71, 138);
+            this.lbCapacity.Location = new System.Drawing.Point(80, 118);
             this.lbCapacity.Name = "lbCapacity";
             this.lbCapacity.Size = new System.Drawing.Size(74, 20);
             this.lbCapacity.TabIndex = 3;
@@ -282,7 +279,7 @@ namespace WorkshopManagementApp
             // 
             // tbxTitle
             // 
-            this.tbxTitle.Location = new System.Drawing.Point(165, 90);
+            this.tbxTitle.Location = new System.Drawing.Point(174, 70);
             this.tbxTitle.Name = "tbxTitle";
             this.tbxTitle.Size = new System.Drawing.Size(202, 26);
             this.tbxTitle.TabIndex = 2;
@@ -290,30 +287,15 @@ namespace WorkshopManagementApp
             // lbTitle
             // 
             this.lbTitle.AutoSize = true;
-            this.lbTitle.Location = new System.Drawing.Point(103, 93);
+            this.lbTitle.Location = new System.Drawing.Point(112, 73);
             this.lbTitle.Name = "lbTitle";
             this.lbTitle.Size = new System.Drawing.Size(42, 20);
             this.lbTitle.TabIndex = 2;
             this.lbTitle.Text = "Title:";
             // 
-            // tbxId
-            // 
-            this.tbxId.Location = new System.Drawing.Point(165, 46);
-            this.tbxId.Name = "tbxId";
-            this.tbxId.Size = new System.Drawing.Size(202, 26);
-            this.tbxId.TabIndex = 1;
-            // 
-            // lbId
-            // 
-            this.lbId.AutoSize = true;
-            this.lbId.Location = new System.Drawing.Point(118, 49);
-            this.lbId.Name = "lbId";
-            this.lbId.Size = new System.Drawing.Size(27, 20);
-            this.lbId.TabIndex = 1;
-            this.lbId.Text = "Id:";
-            // 
             // tabPageManageWorkshops
             // 
+            this.tabPageManageWorkshops.Controls.Add(this.btnGeneratePrintableFileAvailableWorkshops);
             this.tabPageManageWorkshops.Controls.Add(this.btnFinishWorkshop);
             this.tabPageManageWorkshops.Controls.Add(this.gbxFilterWorkshops);
             this.tabPageManageWorkshops.Controls.Add(this.btnStartWorkshop);
@@ -331,7 +313,7 @@ namespace WorkshopManagementApp
             // 
             // btnFinishWorkshop
             // 
-            this.btnFinishWorkshop.Location = new System.Drawing.Point(414, 453);
+            this.btnFinishWorkshop.Location = new System.Drawing.Point(425, 455);
             this.btnFinishWorkshop.Name = "btnFinishWorkshop";
             this.btnFinishWorkshop.Size = new System.Drawing.Size(195, 43);
             this.btnFinishWorkshop.TabIndex = 16;
@@ -375,7 +357,7 @@ namespace WorkshopManagementApp
             // 
             // btnStartWorkshop
             // 
-            this.btnStartWorkshop.Location = new System.Drawing.Point(155, 453);
+            this.btnStartWorkshop.Location = new System.Drawing.Point(166, 455);
             this.btnStartWorkshop.Name = "btnStartWorkshop";
             this.btnStartWorkshop.Size = new System.Drawing.Size(195, 43);
             this.btnStartWorkshop.TabIndex = 6;
@@ -385,7 +367,7 @@ namespace WorkshopManagementApp
             // 
             // btnAssignPeople
             // 
-            this.btnAssignPeople.Location = new System.Drawing.Point(780, 199);
+            this.btnAssignPeople.Location = new System.Drawing.Point(779, 202);
             this.btnAssignPeople.Name = "btnAssignPeople";
             this.btnAssignPeople.Size = new System.Drawing.Size(210, 43);
             this.btnAssignPeople.TabIndex = 4;
@@ -395,7 +377,7 @@ namespace WorkshopManagementApp
             // 
             // btnRemoveWorkshop
             // 
-            this.btnRemoveWorkshop.Location = new System.Drawing.Point(780, 326);
+            this.btnRemoveWorkshop.Location = new System.Drawing.Point(779, 329);
             this.btnRemoveWorkshop.Name = "btnRemoveWorkshop";
             this.btnRemoveWorkshop.Size = new System.Drawing.Size(210, 43);
             this.btnRemoveWorkshop.TabIndex = 3;
@@ -405,7 +387,7 @@ namespace WorkshopManagementApp
             // 
             // btnEditWorkshop
             // 
-            this.btnEditWorkshop.Location = new System.Drawing.Point(780, 265);
+            this.btnEditWorkshop.Location = new System.Drawing.Point(779, 268);
             this.btnEditWorkshop.Name = "btnEditWorkshop";
             this.btnEditWorkshop.Size = new System.Drawing.Size(210, 43);
             this.btnEditWorkshop.TabIndex = 2;
@@ -647,6 +629,17 @@ namespace WorkshopManagementApp
             this.lbxPeople.Size = new System.Drawing.Size(712, 304);
             this.lbxPeople.TabIndex = 8;
             // 
+            // btnGeneratePrintableFileAvailableWorkshops
+            // 
+            this.btnGeneratePrintableFileAvailableWorkshops.BackColor = System.Drawing.Color.Coral;
+            this.btnGeneratePrintableFileAvailableWorkshops.Location = new System.Drawing.Point(779, 43);
+            this.btnGeneratePrintableFileAvailableWorkshops.Name = "btnGeneratePrintableFileAvailableWorkshops";
+            this.btnGeneratePrintableFileAvailableWorkshops.Size = new System.Drawing.Size(210, 65);
+            this.btnGeneratePrintableFileAvailableWorkshops.TabIndex = 17;
+            this.btnGeneratePrintableFileAvailableWorkshops.Text = "Generate printable file with available workshops";
+            this.btnGeneratePrintableFileAvailableWorkshops.UseVisualStyleBackColor = false;
+            this.btnGeneratePrintableFileAvailableWorkshops.Click += new System.EventHandler(this.btnGeneratePrintableFileAvailableWorkshops_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -694,8 +687,6 @@ namespace WorkshopManagementApp
         private System.Windows.Forms.Label lbShortDescription;
         private System.Windows.Forms.TextBox tbxTitle;
         private System.Windows.Forms.Label lbTitle;
-        private System.Windows.Forms.TextBox tbxId;
-        private System.Windows.Forms.Label lbId;
         private System.Windows.Forms.Button btnEditWorkshop;
         private System.Windows.Forms.ListBox lbxWorkshops;
         private System.Windows.Forms.Button btnStartWorkshop;
@@ -730,6 +721,7 @@ namespace WorkshopManagementApp
         private System.Windows.Forms.GroupBox gbxFilterWorkshops;
         private System.Windows.Forms.ComboBox cbFilterWorkshops;
         private System.Windows.Forms.Button btnFinishWorkshop;
+        private System.Windows.Forms.Button btnGeneratePrintableFileAvailableWorkshops;
     }
 }
 

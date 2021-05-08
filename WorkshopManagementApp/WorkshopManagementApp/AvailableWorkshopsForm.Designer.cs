@@ -36,26 +36,28 @@ namespace WorkshopManagementApp
             // lbxWorkshops
             // 
             this.lbxWorkshops.FormattingEnabled = true;
+            this.lbxWorkshops.HorizontalScrollbar = true;
             this.lbxWorkshops.ItemHeight = 20;
             this.lbxWorkshops.Location = new System.Drawing.Point(12, 53);
             this.lbxWorkshops.Name = "lbxWorkshops";
-            this.lbxWorkshops.Size = new System.Drawing.Size(687, 384);
+            this.lbxWorkshops.Size = new System.Drawing.Size(650, 384);
             this.lbxWorkshops.TabIndex = 0;
             // 
             // lbxWarnings
             // 
             this.lbxWarnings.FormattingEnabled = true;
+            this.lbxWarnings.HorizontalScrollbar = true;
             this.lbxWarnings.ItemHeight = 20;
-            this.lbxWarnings.Location = new System.Drawing.Point(722, 54);
+            this.lbxWarnings.Location = new System.Drawing.Point(686, 54);
             this.lbxWarnings.Name = "lbxWarnings";
-            this.lbxWarnings.Size = new System.Drawing.Size(300, 384);
+            this.lbxWarnings.Size = new System.Drawing.Size(508, 384);
             this.lbxWarnings.TabIndex = 1;
             // 
             // AvailableWorkshopsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1046, 450);
+            this.ClientSize = new System.Drawing.Size(1206, 450);
             this.Controls.Add(this.lbxWarnings);
             this.Controls.Add(this.lbxWorkshops);
             this.Name = "AvailableWorkshopsForm";

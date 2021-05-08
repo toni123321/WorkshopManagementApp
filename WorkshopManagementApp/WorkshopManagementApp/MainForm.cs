@@ -123,13 +123,13 @@ namespace WorkshopManagementApp
                     Workshop newWorkshop;
                     if (cbChooseWorkshop.SelectedItem.ToString() == "Onsite")
                     {
-                        newWorkshop = new OnsiteWorkshop(Convert.ToInt32(tbxId.Text), 
+                        newWorkshop = new OnsiteWorkshop(-1, 
                             tbxTitle.Text, tbxShortDescription.Text, Convert.ToInt32(tbxCapacity.Text),
                             tbxAddress.Text, tbxRoomNum.Text);
                     }
                     else
                     {
-                        newWorkshop = new OnlineWorkshop(Convert.ToInt32(tbxId.Text),
+                        newWorkshop = new OnlineWorkshop(-1,
                             tbxTitle.Text, tbxShortDescription.Text, Convert.ToInt32(tbxCapacity.Text),
                             tbxUrl.Text);
                     }
@@ -255,6 +255,7 @@ namespace WorkshopManagementApp
                 {
                     EditWorkshopForm editWorkshopForm = new EditWorkshopForm(this, selectedWorkshop);
                     editWorkshopForm.Show();
+                    editWorkshopForm.ManageSelectedTab();
                 }
                 else
                 {
@@ -279,7 +280,7 @@ namespace WorkshopManagementApp
             if (lbxWorkshops.SelectedIndex != -1)
             {
                 Workshop selectedWorkshop = (Workshop)lbxWorkshops.SelectedItem;
-                if (!selectedWorkshop.IsStarted)
+                if (!selectedWorkshop.IsStarted && selectedWorkshop.Teacher != null)
                 {
                     if (selectedWorkshop.IsAvailable)
                     {
@@ -298,7 +299,14 @@ namespace WorkshopManagementApp
                 }
                 else
                 {
-                    MessageBox.Show("This workshop has already started!");
+                    if (selectedWorkshop.Teacher == null)
+                    {
+                        MessageBox.Show("Teacher is not selected! Workshop can't start!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("This workshop has already started!");
+                    }
                 }
             }
             else
@@ -483,6 +491,23 @@ namespace WorkshopManagementApp
             availableWorkshops.Show();
         }
 
-        
+        private void btnGeneratePrintableFileAvailableWorkshops_Click(object sender, EventArgs e)
+        {
+            // Get the file path - open file dialog
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.DefaultExt = "txt";
+            ofd.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                string path = ofd.FileName;
+                Organisation.WorkshopManager.GeneratePrintableFileForAvailableWorkshops(path);
+                MessageBox.Show("You have successfully generate printable file with available workshops!");
+            }
+            else
+            {
+                MessageBox.Show("You choose cancel!");
+            }
+        }
     }
 }

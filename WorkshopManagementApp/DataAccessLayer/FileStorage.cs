@@ -1,27 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 
 namespace DataAccessLayer
 {
-    public abstract class FileAccess: IStorageAccess
+    public abstract class FileStorage: IStorage
     {
-        private FileStream fs;
-        private BinaryFormatter bf;
-
-        public string Filename
+        public string Path
         {
             get;
             set;
         }
 
-        protected FileAccess(string filename)
+        protected FileStorage(string path)
         {
-            Filename = filename;
+            Path = path;
         }
-
 
         public abstract void Create(object obj);
 
@@ -32,5 +26,6 @@ namespace DataAccessLayer
         public abstract void Update(object obj);
 
         public abstract void Delete(object identifier);
+        
     }
 }
