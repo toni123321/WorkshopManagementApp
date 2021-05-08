@@ -922,11 +922,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\tonit\\OneDrive\\Desktop\\WorkshopManagementApp\\LogicLayer\\LogicLayer.csproj",
+      "projectUniqueName": "C:\\Users\\tonit\\GitHubProjects\\WorkshopManagementApp\\WorkshopManagementApp\\LogicLayer\\LogicLayer.csproj",
       "projectName": "LogicLayer",
-      "projectPath": "C:\\Users\\tonit\\OneDrive\\Desktop\\WorkshopManagementApp\\LogicLayer\\LogicLayer.csproj",
+      "projectPath": "C:\\Users\\tonit\\GitHubProjects\\WorkshopManagementApp\\WorkshopManagementApp\\LogicLayer\\LogicLayer.csproj",
       "packagesPath": "C:\\Users\\tonit\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\tonit\\OneDrive\\Desktop\\WorkshopManagementApp\\LogicLayer\\obj\\",
+      "outputPath": "C:\\Users\\tonit\\GitHubProjects\\WorkshopManagementApp\\WorkshopManagementApp\\LogicLayer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\tonit\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -943,11 +943,11 @@
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
           "projectReferences": {
-            "C:\\Users\\tonit\\OneDrive\\Desktop\\WorkshopManagementApp\\DataAccessLayer\\DataAccessLayer.csproj": {
-              "projectPath": "C:\\Users\\tonit\\OneDrive\\Desktop\\WorkshopManagementApp\\DataAccessLayer\\DataAccessLayer.csproj"
+            "C:\\Users\\tonit\\GitHubProjects\\WorkshopManagementApp\\WorkshopManagementApp\\DataAccessLayer\\DataAccessLayer.csproj": {
+              "projectPath": "C:\\Users\\tonit\\GitHubProjects\\WorkshopManagementApp\\WorkshopManagementApp\\DataAccessLayer\\DataAccessLayer.csproj"
             },
-            "C:\\Users\\tonit\\OneDrive\\Desktop\\WorkshopManagementApp\\Models\\Models.csproj": {
-              "projectPath": "C:\\Users\\tonit\\OneDrive\\Desktop\\WorkshopManagementApp\\Models\\Models.csproj"
+            "C:\\Users\\tonit\\GitHubProjects\\WorkshopManagementApp\\WorkshopManagementApp\\Models\\Models.csproj": {
+              "projectPath": "C:\\Users\\tonit\\GitHubProjects\\WorkshopManagementApp\\WorkshopManagementApp\\Models\\Models.csproj"
             }
           }
         }

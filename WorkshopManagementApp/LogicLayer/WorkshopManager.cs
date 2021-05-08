@@ -90,9 +90,9 @@ namespace LogicLayer
             List<Workshop> specificWorkshops = new List<Workshop>();
             foreach (Workshop w in this.workshops)
             {
-                if ((filter == "started" && w.IsStarted) || 
+                if ((filter == "started" && w.IsStarted && !w.IsAvailable) || 
                     (filter == "available" && w.IsAvailable) ||
-                    (filter == "past" && !w.IsAvailable) ||
+                    (filter == "past" && !w.IsStarted && !w.IsAvailable) ||
                     (filter == "onsite" && w is OnsiteWorkshop) || 
                     (filter == "online" && w is OnlineWorkshop))
 

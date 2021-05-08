@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FTn/hqAHFrPtu2L7IwEJ+tPR8yNTxnmIrm49k/R+o9u/+9kBFDf6mlZh/jhh8pttE+aH9B01tNJUnwNJ0rg3iw==",
+  "dgSpecHash": "MxM2RWdyYso1kW9qooFMbKeEN2jz56K0XoVATICm707mAWXh3a8sH2kQCw8j0qs7gt0CUz/Tl8OPM/rP60p4zw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\tonit\\OneDrive\\Desktop\\WorkshopManagementApp\\DataAccessLayer\\DataAccessLayer.csproj",
+  "projectFilePath": "C:\\Users\\tonit\\GitHubProjects\\WorkshopManagementApp\\WorkshopManagementApp\\DataAccessLayer\\DataAccessLayer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tonit\\.nuget\\packages\\bouncycastle.netcore\\1.8.5\\bouncycastle.netcore.1.8.5.nupkg.sha512",
     "C:\\Users\\tonit\\.nuget\\packages\\google.protobuf\\3.14.0\\google.protobuf.3.14.0.nupkg.sha512",

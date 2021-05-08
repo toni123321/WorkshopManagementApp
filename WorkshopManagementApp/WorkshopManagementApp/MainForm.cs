@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 using System.Windows.Forms;
 using LogicLayer;
 using Models;
@@ -205,16 +206,25 @@ namespace WorkshopManagementApp
         {
             if (lbxWorkshops.SelectedIndex != -1)
             {
+                
                 Workshop selectedWorkshop = (Workshop) lbxWorkshops.SelectedItem;
-                if (Organisation.WorkshopManager.RemoveWorkshop(selectedWorkshop.Id))
+                if (!selectedWorkshop.IsStarted)
                 {
-                    MessageBox.Show($"You have successfully removed workshop with Title: {selectedWorkshop.Title}!");
-                    UpdateManageWorkshops();
-                    AvailableWorkshops.UpdateLbxWorkshops();
+                    if (Organisation.WorkshopManager.RemoveWorkshop(selectedWorkshop.Id))
+                    {
+                        MessageBox.Show(
+                            $"You have successfully removed workshop with Title: {selectedWorkshop.Title}!");
+                        UpdateManageWorkshops();
+                        AvailableWorkshops.UpdateLbxWorkshops();
+                    }
+                    else
+                    {
+                        MessageBox.Show("The selected workshop is already removed! Please refresh!");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("The selected workshop is already removed! Please refresh!");
+                    MessageBox.Show("You can't remove this workshop while it hasn't finished yet!");
                 }
             }
             else
@@ -233,11 +243,99 @@ namespace WorkshopManagementApp
             }
             else
             {
-                MessageBox.Show("Please, select workshop to edit it!");
+                MessageBox.Show("Please, select workshop to edit it or view its details!");
+            }
+        }
+        private void btnAssignPeople_Click(object sender, EventArgs e)
+        {
+            if (lbxWorkshops.SelectedIndex != -1)
+            {
+                Workshop selectedWorkshop = (Workshop)lbxWorkshops.SelectedItem;
+                if (selectedWorkshop.IsAvailable)
+                {
+                    EditWorkshopForm editWorkshopForm = new EditWorkshopForm(this, selectedWorkshop);
+                    editWorkshopForm.Show();
+                }
+                else
+                {
+                    if(selectedWorkshop.IsStarted)
+                    {
+                        MessageBox.Show("This workshop has already started! It's not possible to assign people!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("This workshop has already finished! It's not possible to assign people!");
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please, select workshop to assign people to it!");
             }
         }
 
+        private void btnStartWorkshop_Click(object sender, EventArgs e)
+        {
+            if (lbxWorkshops.SelectedIndex != -1)
+            {
+                Workshop selectedWorkshop = (Workshop)lbxWorkshops.SelectedItem;
+                if (!selectedWorkshop.IsStarted)
+                {
+                    if (selectedWorkshop.IsAvailable)
+                    {
+                        // started - false, available - true 
+                        selectedWorkshop.IsStarted = true;
+                        selectedWorkshop.IsAvailable = false;
+                        Organisation.WorkshopManager.UpdateWorkshop(selectedWorkshop);
+                        UpdateManageWorkshops();
+                        MessageBox.Show($"Workshop with Title: {selectedWorkshop.Title} is started!");
+                    }
+                    else
+                    {
+                        // started - false, available - false
+                        MessageBox.Show("This workshop has already finished. It's a past one.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("This workshop has already started!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please, select workshop to start it!");
+            }
+        }
 
+        private void btnFinishWorkshop_Click(object sender, EventArgs e)
+        {
+            if (lbxWorkshops.SelectedIndex != -1)
+            {
+                Workshop selectedWorkshop = (Workshop)lbxWorkshops.SelectedItem;
+                if (selectedWorkshop.IsStarted)
+                {
+                    selectedWorkshop.IsStarted = false;
+                    Organisation.WorkshopManager.UpdateWorkshop(selectedWorkshop);
+                    UpdateManageWorkshops();
+                    MessageBox.Show($"Workshop with Title: {selectedWorkshop.Title} finished!");
+                }
+                else
+                {
+                    if (selectedWorkshop.IsAvailable)
+                    {
+                        MessageBox.Show("This workshop hasn't started yet!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("This workshop has already finished. It's a past one!");
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please, select workshop to start it!");
+            }
+        }
 
 
         // ----------- Person ---------------------------------
@@ -378,10 +476,13 @@ namespace WorkshopManagementApp
             }
         }
 
+
         private void btnViewAvailableWorkshops_Click(object sender, EventArgs e)
         {
             AvailableWorkshopsForm availableWorkshops = new AvailableWorkshopsForm(this.Organisation);
             availableWorkshops.Show();
         }
+
+        
     }
 }

@@ -54,10 +54,9 @@ namespace WorkshopManagementApp
             this.btnAssignAsTeacher = new System.Windows.Forms.Button();
             this.lbxPeople = new System.Windows.Forms.ListBox();
             this.tabPageManageParticipants = new System.Windows.Forms.TabPage();
+            this.btnViewEnrollmentDetails = new System.Windows.Forms.Button();
             this.btnRemoveParticipant = new System.Windows.Forms.Button();
             this.lbxParticipants = new System.Windows.Forms.ListBox();
-            this.tbxIdWP = new System.Windows.Forms.TextBox();
-            this.btnViewEnrollmentDetails = new System.Windows.Forms.Button();
             this.tabControlWorkshopMenu.SuspendLayout();
             this.tabPageEditWorkshop.SuspendLayout();
             this.gbxEditWorkshop.SuspendLayout();
@@ -257,7 +256,6 @@ namespace WorkshopManagementApp
             // 
             // tabPageAssignPeople
             // 
-            this.tabPageAssignPeople.Controls.Add(this.tbxIdWP);
             this.tabPageAssignPeople.Controls.Add(this.btnAssignAsStudent);
             this.tabPageAssignPeople.Controls.Add(this.btnAssignAsTeacher);
             this.tabPageAssignPeople.Controls.Add(this.lbxPeople);
@@ -310,6 +308,16 @@ namespace WorkshopManagementApp
             this.tabPageManageParticipants.Text = "Manage participants";
             this.tabPageManageParticipants.UseVisualStyleBackColor = true;
             // 
+            // btnViewEnrollmentDetails
+            // 
+            this.btnViewEnrollmentDetails.Location = new System.Drawing.Point(378, 362);
+            this.btnViewEnrollmentDetails.Name = "btnViewEnrollmentDetails";
+            this.btnViewEnrollmentDetails.Size = new System.Drawing.Size(204, 36);
+            this.btnViewEnrollmentDetails.TabIndex = 14;
+            this.btnViewEnrollmentDetails.Text = "View enrollment details";
+            this.btnViewEnrollmentDetails.UseVisualStyleBackColor = true;
+            this.btnViewEnrollmentDetails.Click += new System.EventHandler(this.btnViewEnrollmentDetails_Click);
+            // 
             // btnRemoveParticipant
             // 
             this.btnRemoveParticipant.Location = new System.Drawing.Point(137, 362);
@@ -329,23 +337,6 @@ namespace WorkshopManagementApp
             this.lbxParticipants.Size = new System.Drawing.Size(622, 284);
             this.lbxParticipants.TabIndex = 12;
             // 
-            // tbxIdWP
-            // 
-            this.tbxIdWP.Location = new System.Drawing.Point(87, 392);
-            this.tbxIdWP.Name = "tbxIdWP";
-            this.tbxIdWP.Size = new System.Drawing.Size(100, 26);
-            this.tbxIdWP.TabIndex = 12;
-            // 
-            // btnViewEnrollmentDetails
-            // 
-            this.btnViewEnrollmentDetails.Location = new System.Drawing.Point(378, 362);
-            this.btnViewEnrollmentDetails.Name = "btnViewEnrollmentDetails";
-            this.btnViewEnrollmentDetails.Size = new System.Drawing.Size(204, 36);
-            this.btnViewEnrollmentDetails.TabIndex = 14;
-            this.btnViewEnrollmentDetails.Text = "View enrollment details";
-            this.btnViewEnrollmentDetails.UseVisualStyleBackColor = true;
-            this.btnViewEnrollmentDetails.Click += new System.EventHandler(this.btnViewEnrollmentDetails_Click);
-            // 
             // EditWorkshopForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -360,7 +351,6 @@ namespace WorkshopManagementApp
             this.gbxEditWorkshop.ResumeLayout(false);
             this.gbxEditWorkshop.PerformLayout();
             this.tabPageAssignPeople.ResumeLayout(false);
-            this.tabPageAssignPeople.PerformLayout();
             this.tabPageManageParticipants.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -395,7 +385,6 @@ namespace WorkshopManagementApp
         private System.Windows.Forms.ListBox lbxPeople;
         private System.Windows.Forms.Button btnRemoveParticipant;
         private System.Windows.Forms.ListBox lbxParticipants;
-        private System.Windows.Forms.TextBox tbxIdWP;
         private System.Windows.Forms.Button btnViewEnrollmentDetails;
     }
 }

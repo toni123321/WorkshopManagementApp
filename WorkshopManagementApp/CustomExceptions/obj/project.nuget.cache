@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "i3CZ3HBaeEj8BFXo28DXPDD9JRaw7TzqoNUdKA6/C3YHTEVVmC8L3xZf8NrP2VFAvOtfc8eN6PWQV3nVAt5QKA==",
+  "dgSpecHash": "Fu2dq494xQGOQvHe3hs+LpdCQtSZloDHZvirtwcKoPr3IMiPwo6w9lUy4clftJ/VrXhfIflDJKFQrYyWTrJq9Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\tonit\\OneDrive\\Desktop\\WorkshopManagementApp\\CustomExceptions\\CustomExceptions.csproj",
+  "projectFilePath": "C:\\Users\\tonit\\GitHubProjects\\WorkshopManagementApp\\WorkshopManagementApp\\CustomExceptions\\CustomExceptions.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tonit\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\tonit\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"

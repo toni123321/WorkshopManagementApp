@@ -185,11 +185,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\tonit\\OneDrive\\Desktop\\WorkshopManagementApp\\Models\\Models.csproj",
+      "projectUniqueName": "C:\\Users\\tonit\\GitHubProjects\\WorkshopManagementApp\\WorkshopManagementApp\\Models\\Models.csproj",
       "projectName": "Models",
-      "projectPath": "C:\\Users\\tonit\\OneDrive\\Desktop\\WorkshopManagementApp\\Models\\Models.csproj",
+      "projectPath": "C:\\Users\\tonit\\GitHubProjects\\WorkshopManagementApp\\WorkshopManagementApp\\Models\\Models.csproj",
       "packagesPath": "C:\\Users\\tonit\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\tonit\\OneDrive\\Desktop\\WorkshopManagementApp\\Models\\obj\\",
+      "outputPath": "C:\\Users\\tonit\\GitHubProjects\\WorkshopManagementApp\\WorkshopManagementApp\\Models\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\tonit\\AppData\\Roaming\\NuGet\\NuGet.Config",

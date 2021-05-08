@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tonit\\OneDrive\\Desktop\\WorkshopManagementApp\\LogicLayer\\LogicLayer.csproj": {}
+    "C:\\Users\\tonit\\GitHubProjects\\WorkshopManagementApp\\WorkshopManagementApp\\LogicLayer\\LogicLayer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tonit\\OneDrive\\Desktop\\WorkshopManagementApp\\DataAccessLayer\\DataAccessLayer.csproj": {
+    "C:\\Users\\tonit\\GitHubProjects\\WorkshopManagementApp\\WorkshopManagementApp\\DataAccessLayer\\DataAccessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tonit\\OneDrive\\Desktop\\WorkshopManagementApp\\DataAccessLayer\\DataAccessLayer.csproj",
+        "projectUniqueName": "C:\\Users\\tonit\\GitHubProjects\\WorkshopManagementApp\\WorkshopManagementApp\\DataAccessLayer\\DataAccessLayer.csproj",
         "projectName": "DataAccessLayer",
-        "projectPath": "C:\\Users\\tonit\\OneDrive\\Desktop\\WorkshopManagementApp\\DataAccessLayer\\DataAccessLayer.csproj",
+        "projectPath": "C:\\Users\\tonit\\GitHubProjects\\WorkshopManagementApp\\WorkshopManagementApp\\DataAccessLayer\\DataAccessLayer.csproj",
         "packagesPath": "C:\\Users\\tonit\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tonit\\OneDrive\\Desktop\\WorkshopManagementApp\\DataAccessLayer\\obj\\",
+        "outputPath": "C:\\Users\\tonit\\GitHubProjects\\WorkshopManagementApp\\WorkshopManagementApp\\DataAccessLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\tonit\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "C:\\Users\\tonit\\OneDrive\\Desktop\\WorkshopManagementApp\\Models\\Models.csproj": {
-                "projectPath": "C:\\Users\\tonit\\OneDrive\\Desktop\\WorkshopManagementApp\\Models\\Models.csproj"
+              "C:\\Users\\tonit\\GitHubProjects\\WorkshopManagementApp\\WorkshopManagementApp\\Models\\Models.csproj": {
+                "projectPath": "C:\\Users\\tonit\\GitHubProjects\\WorkshopManagementApp\\WorkshopManagementApp\\Models\\Models.csproj"
               }
             }
           }
@@ -69,14 +69,14 @@
         }
       }
     },
-    "C:\\Users\\tonit\\OneDrive\\Desktop\\WorkshopManagementApp\\LogicLayer\\LogicLayer.csproj": {
+    "C:\\Users\\tonit\\GitHubProjects\\WorkshopManagementApp\\WorkshopManagementApp\\LogicLayer\\LogicLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tonit\\OneDrive\\Desktop\\WorkshopManagementApp\\LogicLayer\\LogicLayer.csproj",
+        "projectUniqueName": "C:\\Users\\tonit\\GitHubProjects\\WorkshopManagementApp\\WorkshopManagementApp\\LogicLayer\\LogicLayer.csproj",
         "projectName": "LogicLayer",
-        "projectPath": "C:\\Users\\tonit\\OneDrive\\Desktop\\WorkshopManagementApp\\LogicLayer\\LogicLayer.csproj",
+        "projectPath": "C:\\Users\\tonit\\GitHubProjects\\WorkshopManagementApp\\WorkshopManagementApp\\LogicLayer\\LogicLayer.csproj",
         "packagesPath": "C:\\Users\\tonit\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tonit\\OneDrive\\Desktop\\WorkshopManagementApp\\LogicLayer\\obj\\",
+        "outputPath": "C:\\Users\\tonit\\GitHubProjects\\WorkshopManagementApp\\WorkshopManagementApp\\LogicLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\tonit\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -93,11 +93,11 @@
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "C:\\Users\\tonit\\OneDrive\\Desktop\\WorkshopManagementApp\\DataAccessLayer\\DataAccessLayer.csproj": {
-                "projectPath": "C:\\Users\\tonit\\OneDrive\\Desktop\\WorkshopManagementApp\\DataAccessLayer\\DataAccessLayer.csproj"
+              "C:\\Users\\tonit\\GitHubProjects\\WorkshopManagementApp\\WorkshopManagementApp\\DataAccessLayer\\DataAccessLayer.csproj": {
+                "projectPath": "C:\\Users\\tonit\\GitHubProjects\\WorkshopManagementApp\\WorkshopManagementApp\\DataAccessLayer\\DataAccessLayer.csproj"
               },
-              "C:\\Users\\tonit\\OneDrive\\Desktop\\WorkshopManagementApp\\Models\\Models.csproj": {
-                "projectPath": "C:\\Users\\tonit\\OneDrive\\Desktop\\WorkshopManagementApp\\Models\\Models.csproj"
+              "C:\\Users\\tonit\\GitHubProjects\\WorkshopManagementApp\\WorkshopManagementApp\\Models\\Models.csproj": {
+                "projectPath": "C:\\Users\\tonit\\GitHubProjects\\WorkshopManagementApp\\WorkshopManagementApp\\Models\\Models.csproj"
               }
             }
           }
@@ -133,14 +133,14 @@
         }
       }
     },
-    "C:\\Users\\tonit\\OneDrive\\Desktop\\WorkshopManagementApp\\Models\\Models.csproj": {
+    "C:\\Users\\tonit\\GitHubProjects\\WorkshopManagementApp\\WorkshopManagementApp\\Models\\Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tonit\\OneDrive\\Desktop\\WorkshopManagementApp\\Models\\Models.csproj",
+        "projectUniqueName": "C:\\Users\\tonit\\GitHubProjects\\WorkshopManagementApp\\WorkshopManagementApp\\Models\\Models.csproj",
         "projectName": "Models",
-        "projectPath": "C:\\Users\\tonit\\OneDrive\\Desktop\\WorkshopManagementApp\\Models\\Models.csproj",
+        "projectPath": "C:\\Users\\tonit\\GitHubProjects\\WorkshopManagementApp\\WorkshopManagementApp\\Models\\Models.csproj",
         "packagesPath": "C:\\Users\\tonit\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tonit\\OneDrive\\Desktop\\WorkshopManagementApp\\Models\\obj\\",
+        "outputPath": "C:\\Users\\tonit\\GitHubProjects\\WorkshopManagementApp\\WorkshopManagementApp\\Models\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\tonit\\AppData\\Roaming\\NuGet\\NuGet.Config",
