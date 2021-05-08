@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FBm7ZItYKoR+SNHw9l5ACsoWKWTfNwB68f0D14yRYEQYxC7dvHT1XH415jIzL8CXI+P0W0X6lX0GszSzj+EhKg==",
+  "dgSpecHash": "Yd1aHmibA2ID0U0Ri6lF2zL90Llm+uHSLpOjOSGTkJ4cTbHDN3Y7Ws8vV7lawJdUPsnlfvLGoMI+F4ytVGBpjg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\tonit\\OneDrive\\Desktop\\WorkshopManagementApp\\LogicLayer\\LogicLayer.csproj",
+  "projectFilePath": "C:\\Users\\tonit\\GitHubProjects\\WorkshopManagementApp\\WorkshopManagementApp\\LogicLayer\\LogicLayer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tonit\\.nuget\\packages\\bouncycastle.netcore\\1.8.5\\bouncycastle.netcore.1.8.5.nupkg.sha512",
     "C:\\Users\\tonit\\.nuget\\packages\\google.protobuf\\3.14.0\\google.protobuf.3.14.0.nupkg.sha512",

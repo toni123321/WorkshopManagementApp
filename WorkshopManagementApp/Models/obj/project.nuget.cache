@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "j+OFEf7flhLccxekcx+7dWRPYf7xqoFsbitvxowUCBCoakc/zHxZIKm/1H6aWIjQ9Dfg1yL9rQYBsCGqK2rSJg==",
+  "dgSpecHash": "KDFoeYZRqCxLgPuf2gC59qCJdcd7qCm96+tYf9egUIosX6t05sSlZLQPdH0AEZG1eD6fRI7BeJ2EoM32TeVIPg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\tonit\\OneDrive\\Desktop\\WorkshopManagementApp\\Models\\Models.csproj",
+  "projectFilePath": "C:\\Users\\tonit\\GitHubProjects\\WorkshopManagementApp\\WorkshopManagementApp\\Models\\Models.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tonit\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\tonit\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"

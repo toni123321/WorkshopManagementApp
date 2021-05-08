@@ -52,11 +52,10 @@ namespace WorkshopManagementApp
             this.tbxId = new System.Windows.Forms.TextBox();
             this.lbId = new System.Windows.Forms.Label();
             this.tabPageManageWorkshops = new System.Windows.Forms.TabPage();
+            this.btnFinishWorkshop = new System.Windows.Forms.Button();
             this.gbxFilterWorkshops = new System.Windows.Forms.GroupBox();
             this.cbFilterWorkshops = new System.Windows.Forms.ComboBox();
-            this.btnViewAvailableWorkshops = new System.Windows.Forms.Button();
-            this.btnStartFinishWorkshop = new System.Windows.Forms.Button();
-            this.btnSeeDetailsWorkshop = new System.Windows.Forms.Button();
+            this.btnStartWorkshop = new System.Windows.Forms.Button();
             this.btnAssignPeople = new System.Windows.Forms.Button();
             this.btnRemoveWorkshop = new System.Windows.Forms.Button();
             this.btnEditWorkshop = new System.Windows.Forms.Button();
@@ -315,10 +314,9 @@ namespace WorkshopManagementApp
             // 
             // tabPageManageWorkshops
             // 
+            this.tabPageManageWorkshops.Controls.Add(this.btnFinishWorkshop);
             this.tabPageManageWorkshops.Controls.Add(this.gbxFilterWorkshops);
-            this.tabPageManageWorkshops.Controls.Add(this.btnViewAvailableWorkshops);
-            this.tabPageManageWorkshops.Controls.Add(this.btnStartFinishWorkshop);
-            this.tabPageManageWorkshops.Controls.Add(this.btnSeeDetailsWorkshop);
+            this.tabPageManageWorkshops.Controls.Add(this.btnStartWorkshop);
             this.tabPageManageWorkshops.Controls.Add(this.btnAssignPeople);
             this.tabPageManageWorkshops.Controls.Add(this.btnRemoveWorkshop);
             this.tabPageManageWorkshops.Controls.Add(this.btnEditWorkshop);
@@ -330,6 +328,16 @@ namespace WorkshopManagementApp
             this.tabPageManageWorkshops.TabIndex = 1;
             this.tabPageManageWorkshops.Text = "Manage workshops";
             this.tabPageManageWorkshops.UseVisualStyleBackColor = true;
+            // 
+            // btnFinishWorkshop
+            // 
+            this.btnFinishWorkshop.Location = new System.Drawing.Point(414, 453);
+            this.btnFinishWorkshop.Name = "btnFinishWorkshop";
+            this.btnFinishWorkshop.Size = new System.Drawing.Size(195, 43);
+            this.btnFinishWorkshop.TabIndex = 16;
+            this.btnFinishWorkshop.Text = "Finish workshop";
+            this.btnFinishWorkshop.UseVisualStyleBackColor = true;
+            this.btnFinishWorkshop.Click += new System.EventHandler(this.btnFinishWorkshop_Click);
             // 
             // gbxFilterWorkshops
             // 
@@ -365,48 +373,31 @@ namespace WorkshopManagementApp
             this.cbFilterWorkshops.Text = "Choose workshop type";
             this.cbFilterWorkshops.SelectedIndexChanged += new System.EventHandler(this.cbFilterWorkshops_SelectedIndexChanged);
             // 
-            // btnViewAvailableWorkshops
+            // btnStartWorkshop
             // 
-            this.btnViewAvailableWorkshops.Location = new System.Drawing.Point(47, 453);
-            this.btnViewAvailableWorkshops.Name = "btnViewAvailableWorkshops";
-            this.btnViewAvailableWorkshops.Size = new System.Drawing.Size(210, 43);
-            this.btnViewAvailableWorkshops.TabIndex = 7;
-            this.btnViewAvailableWorkshops.Text = "View available workshops";
-            this.btnViewAvailableWorkshops.UseVisualStyleBackColor = true;
-            this.btnViewAvailableWorkshops.Click += new System.EventHandler(this.btnViewAvailableWorkshops_Click);
-            // 
-            // btnStartFinishWorkshop
-            // 
-            this.btnStartFinishWorkshop.Location = new System.Drawing.Point(564, 453);
-            this.btnStartFinishWorkshop.Name = "btnStartFinishWorkshop";
-            this.btnStartFinishWorkshop.Size = new System.Drawing.Size(195, 43);
-            this.btnStartFinishWorkshop.TabIndex = 6;
-            this.btnStartFinishWorkshop.Text = "Start/Finish workshop";
-            this.btnStartFinishWorkshop.UseVisualStyleBackColor = true;
-            // 
-            // btnSeeDetailsWorkshop
-            // 
-            this.btnSeeDetailsWorkshop.Location = new System.Drawing.Point(780, 334);
-            this.btnSeeDetailsWorkshop.Name = "btnSeeDetailsWorkshop";
-            this.btnSeeDetailsWorkshop.Size = new System.Drawing.Size(157, 43);
-            this.btnSeeDetailsWorkshop.TabIndex = 5;
-            this.btnSeeDetailsWorkshop.Text = "See details";
-            this.btnSeeDetailsWorkshop.UseVisualStyleBackColor = true;
+            this.btnStartWorkshop.Location = new System.Drawing.Point(155, 453);
+            this.btnStartWorkshop.Name = "btnStartWorkshop";
+            this.btnStartWorkshop.Size = new System.Drawing.Size(195, 43);
+            this.btnStartWorkshop.TabIndex = 6;
+            this.btnStartWorkshop.Text = "Start workshop";
+            this.btnStartWorkshop.UseVisualStyleBackColor = true;
+            this.btnStartWorkshop.Click += new System.EventHandler(this.btnStartWorkshop_Click);
             // 
             // btnAssignPeople
             // 
-            this.btnAssignPeople.Location = new System.Drawing.Point(325, 453);
+            this.btnAssignPeople.Location = new System.Drawing.Point(780, 199);
             this.btnAssignPeople.Name = "btnAssignPeople";
-            this.btnAssignPeople.Size = new System.Drawing.Size(156, 43);
+            this.btnAssignPeople.Size = new System.Drawing.Size(210, 43);
             this.btnAssignPeople.TabIndex = 4;
             this.btnAssignPeople.Text = "AssignPeople";
             this.btnAssignPeople.UseVisualStyleBackColor = true;
+            this.btnAssignPeople.Click += new System.EventHandler(this.btnAssignPeople_Click);
             // 
             // btnRemoveWorkshop
             // 
-            this.btnRemoveWorkshop.Location = new System.Drawing.Point(780, 264);
+            this.btnRemoveWorkshop.Location = new System.Drawing.Point(780, 326);
             this.btnRemoveWorkshop.Name = "btnRemoveWorkshop";
-            this.btnRemoveWorkshop.Size = new System.Drawing.Size(157, 43);
+            this.btnRemoveWorkshop.Size = new System.Drawing.Size(210, 43);
             this.btnRemoveWorkshop.TabIndex = 3;
             this.btnRemoveWorkshop.Text = "Remove";
             this.btnRemoveWorkshop.UseVisualStyleBackColor = true;
@@ -414,11 +405,11 @@ namespace WorkshopManagementApp
             // 
             // btnEditWorkshop
             // 
-            this.btnEditWorkshop.Location = new System.Drawing.Point(780, 196);
+            this.btnEditWorkshop.Location = new System.Drawing.Point(780, 265);
             this.btnEditWorkshop.Name = "btnEditWorkshop";
-            this.btnEditWorkshop.Size = new System.Drawing.Size(157, 43);
+            this.btnEditWorkshop.Size = new System.Drawing.Size(210, 43);
             this.btnEditWorkshop.TabIndex = 2;
-            this.btnEditWorkshop.Text = "Edit";
+            this.btnEditWorkshop.Text = "Edit / View details";
             this.btnEditWorkshop.UseVisualStyleBackColor = true;
             this.btnEditWorkshop.Click += new System.EventHandler(this.btnEditWorkshop_Click);
             // 
@@ -707,9 +698,7 @@ namespace WorkshopManagementApp
         private System.Windows.Forms.Label lbId;
         private System.Windows.Forms.Button btnEditWorkshop;
         private System.Windows.Forms.ListBox lbxWorkshops;
-        private System.Windows.Forms.Button btnViewAvailableWorkshops;
-        private System.Windows.Forms.Button btnStartFinishWorkshop;
-        private System.Windows.Forms.Button btnSeeDetailsWorkshop;
+        private System.Windows.Forms.Button btnStartWorkshop;
         private System.Windows.Forms.Button btnAssignPeople;
         private System.Windows.Forms.Button btnRemoveWorkshop;
         private System.Windows.Forms.GroupBox gbxRegisterPerson;
@@ -740,6 +729,7 @@ namespace WorkshopManagementApp
         private System.Windows.Forms.ComboBox cbChooseWorkshop;
         private System.Windows.Forms.GroupBox gbxFilterWorkshops;
         private System.Windows.Forms.ComboBox cbFilterWorkshops;
+        private System.Windows.Forms.Button btnFinishWorkshop;
     }
 }
 

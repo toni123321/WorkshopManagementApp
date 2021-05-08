@@ -25,8 +25,34 @@ namespace WorkshopManagementApp
             this.selectedWorkshop = selectedWorkshop;
             FillInputs();
             UpdateLbxPeople(organisation.PersonManager.GetAllPeople());
+            ManageAccess();
         }
 
+        private void ManageAccess()
+        {
+            if (!selectedWorkshop.IsAvailable)
+            {
+                tbxTitle.ReadOnly = true;
+                tbxCapacity.ReadOnly = true;
+                tbxShortDescription.ReadOnly = true;
+
+                if (selectedWorkshop is OnsiteWorkshop)
+                {
+                    tbxAddress.ReadOnly = true;
+                    tbxRoomNum.ReadOnly = true;
+                }
+                else
+                {
+                    tbxUrl.ReadOnly = true;
+                }
+
+                btnEditWorkshop.Enabled = false;
+                btnAssignAsTeacher.Enabled = false;
+                btnAssignAsStudent.Enabled = false;
+                btnRemoveParticipant.Enabled = false;
+
+            }
+        }
 
         private void UpdateLbxPeople(List<Person> people)
         {

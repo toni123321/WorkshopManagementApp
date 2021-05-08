@@ -959,11 +959,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\tonit\\OneDrive\\Desktop\\WorkshopManagementApp\\Events_Handling\\Events_Handling.csproj",
+      "projectUniqueName": "C:\\Users\\tonit\\GitHubProjects\\WorkshopManagementApp\\WorkshopManagementApp\\Events_Handling\\Events_Handling.csproj",
       "projectName": "Events_Handling",
-      "projectPath": "C:\\Users\\tonit\\OneDrive\\Desktop\\WorkshopManagementApp\\Events_Handling\\Events_Handling.csproj",
+      "projectPath": "C:\\Users\\tonit\\GitHubProjects\\WorkshopManagementApp\\WorkshopManagementApp\\Events_Handling\\Events_Handling.csproj",
       "packagesPath": "C:\\Users\\tonit\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\tonit\\OneDrive\\Desktop\\WorkshopManagementApp\\Events_Handling\\obj\\",
+      "outputPath": "C:\\Users\\tonit\\GitHubProjects\\WorkshopManagementApp\\WorkshopManagementApp\\Events_Handling\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\tonit\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -980,11 +980,11 @@
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
           "projectReferences": {
-            "C:\\Users\\tonit\\OneDrive\\Desktop\\WorkshopManagementApp\\LogicLayer\\LogicLayer.csproj": {
-              "projectPath": "C:\\Users\\tonit\\OneDrive\\Desktop\\WorkshopManagementApp\\LogicLayer\\LogicLayer.csproj"
+            "C:\\Users\\tonit\\GitHubProjects\\WorkshopManagementApp\\WorkshopManagementApp\\LogicLayer\\LogicLayer.csproj": {
+              "projectPath": "C:\\Users\\tonit\\GitHubProjects\\WorkshopManagementApp\\WorkshopManagementApp\\LogicLayer\\LogicLayer.csproj"
             },
-            "C:\\Users\\tonit\\OneDrive\\Desktop\\WorkshopManagementApp\\WorkshopManagementApp\\PresentationLayer.csproj": {
-              "projectPath": "C:\\Users\\tonit\\OneDrive\\Desktop\\WorkshopManagementApp\\WorkshopManagementApp\\PresentationLayer.csproj"
+            "C:\\Users\\tonit\\GitHubProjects\\WorkshopManagementApp\\WorkshopManagementApp\\WorkshopManagementApp\\PresentationLayer.csproj": {
+              "projectPath": "C:\\Users\\tonit\\GitHubProjects\\WorkshopManagementApp\\WorkshopManagementApp\\WorkshopManagementApp\\PresentationLayer.csproj"
             }
           }
         }

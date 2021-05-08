@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kQqw8XXEAZVeyj3/QlJOLC3kAcRwHeli2URmQAsWN6ET90HTTS5yd8FQ58j/pgZWfWjRx2bSHJkALhFHli+LgQ==",
+  "dgSpecHash": "luKDoOdCTgfkhUrRDYQwVo3vDUIJrn9/ieSQ+uyor43VjQ0+Ar2vkN7U1E+o+qQEV7GpcmJ/KAd70VWlSVkqPQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\tonit\\OneDrive\\Desktop\\WorkshopManagementApp\\Events_Handling\\Events_Handling.csproj",
+  "projectFilePath": "C:\\Users\\tonit\\GitHubProjects\\WorkshopManagementApp\\WorkshopManagementApp\\Events_Handling\\Events_Handling.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tonit\\.nuget\\packages\\bouncycastle.netcore\\1.8.5\\bouncycastle.netcore.1.8.5.nupkg.sha512",
     "C:\\Users\\tonit\\.nuget\\packages\\google.protobuf\\3.14.0\\google.protobuf.3.14.0.nupkg.sha512",

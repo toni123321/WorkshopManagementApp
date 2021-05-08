@@ -185,11 +185,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\tonit\\OneDrive\\Desktop\\WorkshopManagementApp\\CustomExceptions\\CustomExceptions.csproj",
+      "projectUniqueName": "C:\\Users\\tonit\\GitHubProjects\\WorkshopManagementApp\\WorkshopManagementApp\\CustomExceptions\\CustomExceptions.csproj",
       "projectName": "CustomExceptions",
-      "projectPath": "C:\\Users\\tonit\\OneDrive\\Desktop\\WorkshopManagementApp\\CustomExceptions\\CustomExceptions.csproj",
+      "projectPath": "C:\\Users\\tonit\\GitHubProjects\\WorkshopManagementApp\\WorkshopManagementApp\\CustomExceptions\\CustomExceptions.csproj",
       "packagesPath": "C:\\Users\\tonit\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\tonit\\OneDrive\\Desktop\\WorkshopManagementApp\\CustomExceptions\\obj\\",
+      "outputPath": "C:\\Users\\tonit\\GitHubProjects\\WorkshopManagementApp\\WorkshopManagementApp\\CustomExceptions\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\tonit\\AppData\\Roaming\\NuGet\\NuGet.Config",
