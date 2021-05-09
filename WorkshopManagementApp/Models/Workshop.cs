@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.RegularExpressions;
+using CustomExceptions;
 
 namespace Models
 {
@@ -24,19 +26,53 @@ namespace Models
         public string Title
         {
             get { return this.title;}
-            set { this.title = value; }
+            set
+            {
+                bool isValid = Regex.IsMatch(value, @"^([A-Za-z0-9.&]+[ ]?){1,}[^\s]$");
+                if (isValid)
+                {
+                    this.title = value;
+                }
+                else
+                {
+                    throw new InputFieldException("Title is not in the correct format!");
+                }
+                
+            }
         }
 
         public string ShortDescription
         {
             get { return this.shortDescription; }
-            set { this.shortDescription = value; }
+            set
+            {
+                if (value.Length <= 200)
+                {
+                    this.shortDescription = value;
+                }
+                else
+                {
+                    throw new InputFieldException("The description is too long!");
+                }
+            }
         }
 
         public int Capacity
         {
             get { return this.capacity; }
-            set { this.capacity = value; }
+            set
+            {
+                bool isValid = Regex.IsMatch(value.ToString(), @"^[1-9]{1}[0-9]*$");
+                if (isValid)
+                {
+                    this.capacity = value;
+                }
+                else
+                {
+                    throw new InputFieldException("Capacity should contain only digits higher than 0!");
+                }
+                
+            }
         }
 
         public Person Teacher
@@ -51,7 +87,7 @@ namespace Models
             set
             {
                 //TODO: (0.9 * this.Capacity)
-                if (value >= 1)
+                if (value >= (0.9 * this.Capacity))
                 {
                     NotifyNewWorkshopCapacityWarning($"The nr of participants({value}) exceeds 90% of workshop capacity!");
                 }

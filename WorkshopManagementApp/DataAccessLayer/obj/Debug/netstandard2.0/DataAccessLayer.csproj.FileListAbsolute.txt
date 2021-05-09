@@ -46,3 +46,5 @@ C:\Users\tonit\GitHubProjects\WorkshopManagementApp\WorkshopManagementApp\DataAc
 C:\Users\tonit\GitHubProjects\WorkshopManagementApp\WorkshopManagementApp\DataAccessLayer\obj\Debug\netstandard2.0\DataAccessLayer.csproj.CopyComplete
 C:\Users\tonit\GitHubProjects\WorkshopManagementApp\WorkshopManagementApp\DataAccessLayer\obj\Debug\netstandard2.0\DataAccessLayer.dll
 C:\Users\tonit\GitHubProjects\WorkshopManagementApp\WorkshopManagementApp\DataAccessLayer\obj\Debug\netstandard2.0\DataAccessLayer.pdb
+C:\Users\tonit\GitHubProjects\WorkshopManagementApp\WorkshopManagementApp\DataAccessLayer\bin\Debug\netstandard2.0\CustomExceptions.dll
+C:\Users\tonit\GitHubProjects\WorkshopManagementApp\WorkshopManagementApp\DataAccessLayer\bin\Debug\netstandard2.0\CustomExceptions.pdb

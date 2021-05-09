@@ -20,7 +20,7 @@ namespace DataAccessLayer
             StreamWriter sw = null;
             try
             {
-                fs = new FileStream(Path, FileMode.OpenOrCreate, FileAccess.Write);
+                fs = new FileStream(Path, FileMode.Truncate, FileAccess.Write);
                 sw = new StreamWriter(fs);
 
                 foreach (Workshop w in workshops)

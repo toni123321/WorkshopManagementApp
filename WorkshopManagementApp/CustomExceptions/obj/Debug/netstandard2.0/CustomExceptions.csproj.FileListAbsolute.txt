@@ -1,0 +1,9 @@
+C:\Users\tonit\GitHubProjects\WorkshopManagementApp\WorkshopManagementApp\CustomExceptions\bin\Debug\netstandard2.0\CustomExceptions.deps.json
+C:\Users\tonit\GitHubProjects\WorkshopManagementApp\WorkshopManagementApp\CustomExceptions\bin\Debug\netstandard2.0\CustomExceptions.dll
+C:\Users\tonit\GitHubProjects\WorkshopManagementApp\WorkshopManagementApp\CustomExceptions\bin\Debug\netstandard2.0\CustomExceptions.pdb
+C:\Users\tonit\GitHubProjects\WorkshopManagementApp\WorkshopManagementApp\CustomExceptions\obj\Debug\netstandard2.0\CustomExceptions.csprojAssemblyReference.cache
+C:\Users\tonit\GitHubProjects\WorkshopManagementApp\WorkshopManagementApp\CustomExceptions\obj\Debug\netstandard2.0\CustomExceptions.AssemblyInfoInputs.cache
+C:\Users\tonit\GitHubProjects\WorkshopManagementApp\WorkshopManagementApp\CustomExceptions\obj\Debug\netstandard2.0\CustomExceptions.AssemblyInfo.cs
+C:\Users\tonit\GitHubProjects\WorkshopManagementApp\WorkshopManagementApp\CustomExceptions\obj\Debug\netstandard2.0\CustomExceptions.csproj.CoreCompileInputs.cache
+C:\Users\tonit\GitHubProjects\WorkshopManagementApp\WorkshopManagementApp\CustomExceptions\obj\Debug\netstandard2.0\CustomExceptions.dll
+C:\Users\tonit\GitHubProjects\WorkshopManagementApp\WorkshopManagementApp\CustomExceptions\obj\Debug\netstandard2.0\CustomExceptions.pdb

@@ -157,6 +157,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CustomExceptions\CustomExceptions.csproj">
+      <Project>{07ea1690-0106-41d5-a1b7-2d7dcfd234f9}</Project>
+      <Name>CustomExceptions</Name>
+    </ProjectReference>
     <ProjectReference Include="..\LogicLayer\LogicLayer.csproj">
       <Project>{5f67f56c-e3b6-4776-8c5a-731b71c6c3ee}</Project>
       <Name>LogicLayer</Name>

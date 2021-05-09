@@ -237,9 +237,22 @@
           }
         }
       },
+      "CustomExceptions/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/CustomExceptions.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CustomExceptions.dll": {}
+        }
+      },
       "Models/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "CustomExceptions": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/Models.dll": {}
         },
@@ -883,6 +896,11 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "CustomExceptions/1.0.0": {
+      "type": "project",
+      "path": "../CustomExceptions/CustomExceptions.csproj",
+      "msbuildProject": "../CustomExceptions/CustomExceptions.csproj"
     },
     "Models/1.0.0": {
       "type": "project",
