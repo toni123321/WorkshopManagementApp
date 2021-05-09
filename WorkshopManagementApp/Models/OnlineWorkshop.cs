@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.RegularExpressions;
+using CustomExceptions;
 
 namespace Models
 {
@@ -12,7 +14,19 @@ namespace Models
         public string Url
         {
             get { return this.url; }
-            set { this.url = value; }
+            set
+            {
+                bool isValid = Regex.IsMatch(value, @"^(https?:\/\/)?([\w\-])+\.{1}([a-zA-Z]{2,63})[\/\w-]*\/?\??([^#\n\r]*)?#?([^\n\r]*)$");
+                if (isValid)
+                {
+                    this.url = value;
+                }
+                else
+                {
+                    throw new InputFieldException("URL is not in the correct format!");
+                }
+                
+            }
         }
 
         public OnlineWorkshop(int id, string title, string shortDescription, int capacity, int nrOfParticipants, bool isAvailable, bool isStarted, Person teacher, string url) 

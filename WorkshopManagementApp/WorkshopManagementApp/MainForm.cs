@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Transactions;
 using System.Windows.Forms;
+using CustomExceptions;
 using LogicLayer;
 using Models;
 
@@ -123,7 +124,7 @@ namespace WorkshopManagementApp
                     Workshop newWorkshop;
                     if (cbChooseWorkshop.SelectedItem.ToString() == "Onsite")
                     {
-                        newWorkshop = new OnsiteWorkshop(-1, 
+                        newWorkshop = new OnsiteWorkshop(-1,
                             tbxTitle.Text, tbxShortDescription.Text, Convert.ToInt32(tbxCapacity.Text),
                             tbxAddress.Text, tbxRoomNum.Text);
                     }
@@ -140,6 +141,10 @@ namespace WorkshopManagementApp
                     AvailableWorkshops.UpdateLbxWorkshops();
 
 
+                }
+                catch (InputFieldException ex)
+                {
+                    MessageBox.Show(ex.Message);
                 }
                 catch (Exception ex)
                 {
@@ -407,6 +412,10 @@ namespace WorkshopManagementApp
                     }
 
                 }
+                catch (InputFieldException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
@@ -414,7 +423,14 @@ namespace WorkshopManagementApp
             }
             else
             {
-                MessageBox.Show("Please, fill all the boxes to register person to the system!");
+                if (cbUserType.SelectedIndex != -1)
+                {
+                    MessageBox.Show("Please, choose user type from the dropdown instead of writing in the input field!");
+                }
+                else
+                {
+                    MessageBox.Show("Please, fill all the boxes to register person to the system!");
+                }
             }
         }
 

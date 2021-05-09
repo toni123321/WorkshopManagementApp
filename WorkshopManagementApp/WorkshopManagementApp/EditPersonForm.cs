@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CustomExceptions;
 using LogicLayer;
 using Models;
 
@@ -70,6 +71,10 @@ namespace WorkshopManagementApp
                     {
                         MessageBox.Show($"Person with such Pcn: {newPerson.Pcn} doesn't exist!");
                     }
+                }
+                catch(InputFieldException ex)
+                {
+                    MessageBox.Show(ex.Message);
                 }
                 catch (Exception ex)
                 {

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CustomExceptions;
 using LogicLayer;
 using Models;
 
@@ -140,6 +141,10 @@ namespace WorkshopManagementApp
                     {
                         MessageBox.Show($"Workshop with such id: {newWorkshop.Id} doesn't exist!");
                     }
+                }
+                catch (InputFieldException ex)
+                {
+                    MessageBox.Show(ex.Message);
                 }
                 catch (Exception ex)
                 {

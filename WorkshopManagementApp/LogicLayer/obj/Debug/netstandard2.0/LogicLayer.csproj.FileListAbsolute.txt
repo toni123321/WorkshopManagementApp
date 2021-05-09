@@ -50,3 +50,5 @@ C:\Users\tonit\GitHubProjects\WorkshopManagementApp\WorkshopManagementApp\LogicL
 C:\Users\tonit\GitHubProjects\WorkshopManagementApp\WorkshopManagementApp\LogicLayer\obj\Debug\netstandard2.0\LogicLayer.csproj.CopyComplete
 C:\Users\tonit\GitHubProjects\WorkshopManagementApp\WorkshopManagementApp\LogicLayer\obj\Debug\netstandard2.0\LogicLayer.dll
 C:\Users\tonit\GitHubProjects\WorkshopManagementApp\WorkshopManagementApp\LogicLayer\obj\Debug\netstandard2.0\LogicLayer.pdb
+C:\Users\tonit\GitHubProjects\WorkshopManagementApp\WorkshopManagementApp\LogicLayer\bin\Debug\netstandard2.0\CustomExceptions.dll
+C:\Users\tonit\GitHubProjects\WorkshopManagementApp\WorkshopManagementApp\LogicLayer\bin\Debug\netstandard2.0\CustomExceptions.pdb

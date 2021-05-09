@@ -237,6 +237,16 @@
           }
         }
       },
+      "CustomExceptions/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/CustomExceptions.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CustomExceptions.dll": {}
+        }
+      },
       "DataAccessLayer/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -268,6 +278,9 @@
       "Models/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "CustomExceptions": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/Models.dll": {}
         },
@@ -278,6 +291,7 @@
       "PresentationLayer/1.0.0": {
         "type": "project",
         "dependencies": {
+          "CustomExceptions": "1.0.0",
           "LogicLayer": "1.0.0",
           "Models": "1.0.0"
         },
@@ -924,6 +938,11 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "CustomExceptions/1.0.0": {
+      "type": "project",
+      "path": "../CustomExceptions/CustomExceptions.csproj",
+      "msbuildProject": "../CustomExceptions/CustomExceptions.csproj"
     },
     "DataAccessLayer/1.0.0": {
       "type": "project",
