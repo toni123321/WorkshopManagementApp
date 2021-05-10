@@ -50,6 +50,7 @@ namespace WorkshopManagementApp
             this.tbxTitle = new System.Windows.Forms.TextBox();
             this.lbTitle = new System.Windows.Forms.Label();
             this.tabPageManageWorkshops = new System.Windows.Forms.TabPage();
+            this.btnGeneratePrintableFileAvailableWorkshops = new System.Windows.Forms.Button();
             this.btnFinishWorkshop = new System.Windows.Forms.Button();
             this.gbxFilterWorkshops = new System.Windows.Forms.GroupBox();
             this.cbFilterWorkshops = new System.Windows.Forms.ComboBox();
@@ -80,7 +81,6 @@ namespace WorkshopManagementApp
             this.btnRemovePerson = new System.Windows.Forms.Button();
             this.btnEditPerson = new System.Windows.Forms.Button();
             this.lbxPeople = new System.Windows.Forms.ListBox();
-            this.btnGeneratePrintableFileAvailableWorkshops = new System.Windows.Forms.Button();
             this.tabControlMainMenu.SuspendLayout();
             this.tabPageWorkshops.SuspendLayout();
             this.tabControlWorkshopMenu.SuspendLayout();
@@ -101,19 +101,21 @@ namespace WorkshopManagementApp
             // 
             this.tabControlMainMenu.Controls.Add(this.tabPageWorkshops);
             this.tabControlMainMenu.Controls.Add(this.tabPagePeople);
-            this.tabControlMainMenu.Location = new System.Drawing.Point(12, 12);
+            this.tabControlMainMenu.Location = new System.Drawing.Point(15, 13);
+            this.tabControlMainMenu.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabControlMainMenu.Name = "tabControlMainMenu";
             this.tabControlMainMenu.SelectedIndex = 0;
-            this.tabControlMainMenu.Size = new System.Drawing.Size(1035, 611);
+            this.tabControlMainMenu.Size = new System.Drawing.Size(1265, 672);
             this.tabControlMainMenu.TabIndex = 0;
             // 
             // tabPageWorkshops
             // 
             this.tabPageWorkshops.Controls.Add(this.tabControlWorkshopMenu);
-            this.tabPageWorkshops.Location = new System.Drawing.Point(4, 29);
+            this.tabPageWorkshops.Location = new System.Drawing.Point(4, 31);
+            this.tabPageWorkshops.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabPageWorkshops.Name = "tabPageWorkshops";
-            this.tabPageWorkshops.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageWorkshops.Size = new System.Drawing.Size(1027, 578);
+            this.tabPageWorkshops.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.tabPageWorkshops.Size = new System.Drawing.Size(1257, 637);
             this.tabPageWorkshops.TabIndex = 0;
             this.tabPageWorkshops.Text = "Workshops";
             this.tabPageWorkshops.UseVisualStyleBackColor = true;
@@ -122,10 +124,11 @@ namespace WorkshopManagementApp
             // 
             this.tabControlWorkshopMenu.Controls.Add(this.tabPageCreateWorkshop);
             this.tabControlWorkshopMenu.Controls.Add(this.tabPageManageWorkshops);
-            this.tabControlWorkshopMenu.Location = new System.Drawing.Point(6, 18);
+            this.tabControlWorkshopMenu.Location = new System.Drawing.Point(7, 20);
+            this.tabControlWorkshopMenu.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabControlWorkshopMenu.Name = "tabControlWorkshopMenu";
             this.tabControlWorkshopMenu.SelectedIndex = 0;
-            this.tabControlWorkshopMenu.Size = new System.Drawing.Size(1015, 554);
+            this.tabControlWorkshopMenu.Size = new System.Drawing.Size(1241, 609);
             this.tabControlWorkshopMenu.TabIndex = 0;
             this.tabControlWorkshopMenu.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControlWorkshopMenu_Selected);
             // 
@@ -133,10 +136,11 @@ namespace WorkshopManagementApp
             // 
             this.tabPageCreateWorkshop.Controls.Add(this.gbxChooseWorkshop);
             this.tabPageCreateWorkshop.Controls.Add(this.gbxCreateWorkshop);
-            this.tabPageCreateWorkshop.Location = new System.Drawing.Point(4, 29);
+            this.tabPageCreateWorkshop.Location = new System.Drawing.Point(4, 31);
+            this.tabPageCreateWorkshop.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabPageCreateWorkshop.Name = "tabPageCreateWorkshop";
-            this.tabPageCreateWorkshop.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageCreateWorkshop.Size = new System.Drawing.Size(1007, 521);
+            this.tabPageCreateWorkshop.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.tabPageCreateWorkshop.Size = new System.Drawing.Size(1233, 574);
             this.tabPageCreateWorkshop.TabIndex = 0;
             this.tabPageCreateWorkshop.Text = "Create workshop";
             this.tabPageCreateWorkshop.UseVisualStyleBackColor = true;
@@ -144,9 +148,11 @@ namespace WorkshopManagementApp
             // gbxChooseWorkshop
             // 
             this.gbxChooseWorkshop.Controls.Add(this.cbChooseWorkshop);
-            this.gbxChooseWorkshop.Location = new System.Drawing.Point(148, 28);
+            this.gbxChooseWorkshop.Location = new System.Drawing.Point(181, 31);
+            this.gbxChooseWorkshop.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.gbxChooseWorkshop.Name = "gbxChooseWorkshop";
-            this.gbxChooseWorkshop.Size = new System.Drawing.Size(712, 92);
+            this.gbxChooseWorkshop.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.gbxChooseWorkshop.Size = new System.Drawing.Size(870, 101);
             this.gbxChooseWorkshop.TabIndex = 0;
             this.gbxChooseWorkshop.TabStop = false;
             this.gbxChooseWorkshop.Text = "Choose type of workshop you want to create";
@@ -157,9 +163,10 @@ namespace WorkshopManagementApp
             this.cbChooseWorkshop.Items.AddRange(new object[] {
             "Onsite",
             "Online"});
-            this.cbChooseWorkshop.Location = new System.Drawing.Point(220, 40);
+            this.cbChooseWorkshop.Location = new System.Drawing.Point(269, 44);
+            this.cbChooseWorkshop.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cbChooseWorkshop.Name = "cbChooseWorkshop";
-            this.cbChooseWorkshop.Size = new System.Drawing.Size(246, 28);
+            this.cbChooseWorkshop.Size = new System.Drawing.Size(300, 30);
             this.cbChooseWorkshop.TabIndex = 0;
             this.cbChooseWorkshop.Text = "Onsite/Online...";
             this.cbChooseWorkshop.SelectedIndexChanged += new System.EventHandler(this.cbChooseWorkshop_SelectedIndexChanged);
@@ -179,66 +186,75 @@ namespace WorkshopManagementApp
             this.gbxCreateWorkshop.Controls.Add(this.lbShortDescription);
             this.gbxCreateWorkshop.Controls.Add(this.tbxTitle);
             this.gbxCreateWorkshop.Controls.Add(this.lbTitle);
-            this.gbxCreateWorkshop.Location = new System.Drawing.Point(93, 126);
+            this.gbxCreateWorkshop.Location = new System.Drawing.Point(114, 139);
+            this.gbxCreateWorkshop.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.gbxCreateWorkshop.Name = "gbxCreateWorkshop";
-            this.gbxCreateWorkshop.Size = new System.Drawing.Size(812, 375);
+            this.gbxCreateWorkshop.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.gbxCreateWorkshop.Size = new System.Drawing.Size(992, 413);
             this.gbxCreateWorkshop.TabIndex = 1;
             this.gbxCreateWorkshop.TabStop = false;
             this.gbxCreateWorkshop.Text = "Create workshop";
             // 
             // tbxUrl
             // 
-            this.tbxUrl.Location = new System.Drawing.Point(174, 249);
+            this.tbxUrl.Location = new System.Drawing.Point(213, 274);
+            this.tbxUrl.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tbxUrl.Name = "tbxUrl";
-            this.tbxUrl.Size = new System.Drawing.Size(202, 26);
+            this.tbxUrl.Size = new System.Drawing.Size(246, 28);
             this.tbxUrl.TabIndex = 6;
             // 
             // lbUrl
             // 
             this.lbUrl.AutoSize = true;
-            this.lbUrl.Location = new System.Drawing.Point(106, 252);
+            this.lbUrl.Location = new System.Drawing.Point(130, 277);
+            this.lbUrl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbUrl.Name = "lbUrl";
-            this.lbUrl.Size = new System.Drawing.Size(46, 20);
+            this.lbUrl.Size = new System.Drawing.Size(55, 22);
             this.lbUrl.TabIndex = 6;
             this.lbUrl.Text = "URL:";
             // 
             // tbxRoomNum
             // 
-            this.tbxRoomNum.Location = new System.Drawing.Point(174, 204);
+            this.tbxRoomNum.Location = new System.Drawing.Point(213, 224);
+            this.tbxRoomNum.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tbxRoomNum.Name = "tbxRoomNum";
-            this.tbxRoomNum.Size = new System.Drawing.Size(202, 26);
+            this.tbxRoomNum.Size = new System.Drawing.Size(246, 28);
             this.tbxRoomNum.TabIndex = 5;
             // 
             // lbRoomNum
             // 
             this.lbRoomNum.AutoSize = true;
-            this.lbRoomNum.Location = new System.Drawing.Point(47, 210);
+            this.lbRoomNum.Location = new System.Drawing.Point(57, 231);
+            this.lbRoomNum.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbRoomNum.Name = "lbRoomNum";
-            this.lbRoomNum.Size = new System.Drawing.Size(105, 20);
+            this.lbRoomNum.Size = new System.Drawing.Size(129, 22);
             this.lbRoomNum.TabIndex = 5;
             this.lbRoomNum.Text = "roomNumber:";
             // 
             // tbxAddress
             // 
-            this.tbxAddress.Location = new System.Drawing.Point(174, 160);
+            this.tbxAddress.Location = new System.Drawing.Point(213, 176);
+            this.tbxAddress.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tbxAddress.Name = "tbxAddress";
-            this.tbxAddress.Size = new System.Drawing.Size(202, 26);
+            this.tbxAddress.Size = new System.Drawing.Size(246, 28);
             this.tbxAddress.TabIndex = 4;
             // 
             // lbAddress
             // 
             this.lbAddress.AutoSize = true;
-            this.lbAddress.Location = new System.Drawing.Point(80, 166);
+            this.lbAddress.Location = new System.Drawing.Point(98, 183);
+            this.lbAddress.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbAddress.Name = "lbAddress";
-            this.lbAddress.Size = new System.Drawing.Size(72, 20);
+            this.lbAddress.Size = new System.Drawing.Size(89, 22);
             this.lbAddress.TabIndex = 4;
             this.lbAddress.Text = "Address:";
             // 
             // btnCreateWorkshop
             // 
-            this.btnCreateWorkshop.Location = new System.Drawing.Point(328, 316);
+            this.btnCreateWorkshop.Location = new System.Drawing.Point(401, 348);
+            this.btnCreateWorkshop.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnCreateWorkshop.Name = "btnCreateWorkshop";
-            this.btnCreateWorkshop.Size = new System.Drawing.Size(147, 38);
+            this.btnCreateWorkshop.Size = new System.Drawing.Size(180, 42);
             this.btnCreateWorkshop.TabIndex = 8;
             this.btnCreateWorkshop.Text = "Create workshop";
             this.btnCreateWorkshop.UseVisualStyleBackColor = true;
@@ -246,50 +262,56 @@ namespace WorkshopManagementApp
             // 
             // tbxCapacity
             // 
-            this.tbxCapacity.Location = new System.Drawing.Point(174, 115);
+            this.tbxCapacity.Location = new System.Drawing.Point(213, 127);
+            this.tbxCapacity.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tbxCapacity.Name = "tbxCapacity";
-            this.tbxCapacity.Size = new System.Drawing.Size(202, 26);
+            this.tbxCapacity.Size = new System.Drawing.Size(246, 28);
             this.tbxCapacity.TabIndex = 3;
             // 
             // lbCapacity
             // 
             this.lbCapacity.AutoSize = true;
-            this.lbCapacity.Location = new System.Drawing.Point(80, 118);
+            this.lbCapacity.Location = new System.Drawing.Point(98, 130);
+            this.lbCapacity.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbCapacity.Name = "lbCapacity";
-            this.lbCapacity.Size = new System.Drawing.Size(74, 20);
+            this.lbCapacity.Size = new System.Drawing.Size(94, 22);
             this.lbCapacity.TabIndex = 3;
             this.lbCapacity.Text = "Capacity:";
             // 
             // tbxShortDescription
             // 
-            this.tbxShortDescription.Location = new System.Drawing.Point(436, 120);
+            this.tbxShortDescription.Location = new System.Drawing.Point(533, 132);
+            this.tbxShortDescription.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tbxShortDescription.Multiline = true;
             this.tbxShortDescription.Name = "tbxShortDescription";
-            this.tbxShortDescription.Size = new System.Drawing.Size(310, 121);
+            this.tbxShortDescription.Size = new System.Drawing.Size(378, 133);
             this.tbxShortDescription.TabIndex = 7;
             // 
             // lbShortDescription
             // 
             this.lbShortDescription.AutoSize = true;
-            this.lbShortDescription.Location = new System.Drawing.Point(531, 87);
+            this.lbShortDescription.Location = new System.Drawing.Point(649, 96);
+            this.lbShortDescription.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbShortDescription.Name = "lbShortDescription";
-            this.lbShortDescription.Size = new System.Drawing.Size(133, 20);
+            this.lbShortDescription.Size = new System.Drawing.Size(168, 22);
             this.lbShortDescription.TabIndex = 7;
             this.lbShortDescription.Text = "Short description:";
             // 
             // tbxTitle
             // 
-            this.tbxTitle.Location = new System.Drawing.Point(174, 70);
+            this.tbxTitle.Location = new System.Drawing.Point(213, 77);
+            this.tbxTitle.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tbxTitle.Name = "tbxTitle";
-            this.tbxTitle.Size = new System.Drawing.Size(202, 26);
+            this.tbxTitle.Size = new System.Drawing.Size(246, 28);
             this.tbxTitle.TabIndex = 2;
             // 
             // lbTitle
             // 
             this.lbTitle.AutoSize = true;
-            this.lbTitle.Location = new System.Drawing.Point(112, 73);
+            this.lbTitle.Location = new System.Drawing.Point(137, 80);
+            this.lbTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(42, 20);
+            this.lbTitle.Size = new System.Drawing.Size(56, 22);
             this.lbTitle.TabIndex = 2;
             this.lbTitle.Text = "Title:";
             // 
@@ -303,19 +325,33 @@ namespace WorkshopManagementApp
             this.tabPageManageWorkshops.Controls.Add(this.btnRemoveWorkshop);
             this.tabPageManageWorkshops.Controls.Add(this.btnEditWorkshop);
             this.tabPageManageWorkshops.Controls.Add(this.lbxWorkshops);
-            this.tabPageManageWorkshops.Location = new System.Drawing.Point(4, 29);
+            this.tabPageManageWorkshops.Location = new System.Drawing.Point(4, 31);
+            this.tabPageManageWorkshops.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabPageManageWorkshops.Name = "tabPageManageWorkshops";
-            this.tabPageManageWorkshops.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageManageWorkshops.Size = new System.Drawing.Size(1007, 521);
+            this.tabPageManageWorkshops.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.tabPageManageWorkshops.Size = new System.Drawing.Size(1233, 574);
             this.tabPageManageWorkshops.TabIndex = 1;
             this.tabPageManageWorkshops.Text = "Manage workshops";
             this.tabPageManageWorkshops.UseVisualStyleBackColor = true;
             // 
+            // btnGeneratePrintableFileAvailableWorkshops
+            // 
+            this.btnGeneratePrintableFileAvailableWorkshops.BackColor = System.Drawing.Color.Coral;
+            this.btnGeneratePrintableFileAvailableWorkshops.Location = new System.Drawing.Point(952, 47);
+            this.btnGeneratePrintableFileAvailableWorkshops.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnGeneratePrintableFileAvailableWorkshops.Name = "btnGeneratePrintableFileAvailableWorkshops";
+            this.btnGeneratePrintableFileAvailableWorkshops.Size = new System.Drawing.Size(257, 72);
+            this.btnGeneratePrintableFileAvailableWorkshops.TabIndex = 17;
+            this.btnGeneratePrintableFileAvailableWorkshops.Text = "Generate printable file with available workshops";
+            this.btnGeneratePrintableFileAvailableWorkshops.UseVisualStyleBackColor = false;
+            this.btnGeneratePrintableFileAvailableWorkshops.Click += new System.EventHandler(this.btnGeneratePrintableFileAvailableWorkshops_Click);
+            // 
             // btnFinishWorkshop
             // 
-            this.btnFinishWorkshop.Location = new System.Drawing.Point(425, 455);
+            this.btnFinishWorkshop.Location = new System.Drawing.Point(519, 501);
+            this.btnFinishWorkshop.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnFinishWorkshop.Name = "btnFinishWorkshop";
-            this.btnFinishWorkshop.Size = new System.Drawing.Size(195, 43);
+            this.btnFinishWorkshop.Size = new System.Drawing.Size(238, 47);
             this.btnFinishWorkshop.TabIndex = 16;
             this.btnFinishWorkshop.Text = "Finish workshop";
             this.btnFinishWorkshop.UseVisualStyleBackColor = true;
@@ -324,9 +360,11 @@ namespace WorkshopManagementApp
             // gbxFilterWorkshops
             // 
             this.gbxFilterWorkshops.Controls.Add(this.cbFilterWorkshops);
-            this.gbxFilterWorkshops.Location = new System.Drawing.Point(47, 22);
+            this.gbxFilterWorkshops.Location = new System.Drawing.Point(57, 24);
+            this.gbxFilterWorkshops.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.gbxFilterWorkshops.Name = "gbxFilterWorkshops";
-            this.gbxFilterWorkshops.Size = new System.Drawing.Size(712, 92);
+            this.gbxFilterWorkshops.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.gbxFilterWorkshops.Size = new System.Drawing.Size(870, 101);
             this.gbxFilterWorkshops.TabIndex = 15;
             this.gbxFilterWorkshops.TabStop = false;
             this.gbxFilterWorkshops.Text = "Show different types of workshops";
@@ -348,18 +386,20 @@ namespace WorkshopManagementApp
             "Available",
             "Started",
             "Past"});
-            this.cbFilterWorkshops.Location = new System.Drawing.Point(220, 40);
+            this.cbFilterWorkshops.Location = new System.Drawing.Point(269, 44);
+            this.cbFilterWorkshops.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cbFilterWorkshops.Name = "cbFilterWorkshops";
-            this.cbFilterWorkshops.Size = new System.Drawing.Size(246, 28);
+            this.cbFilterWorkshops.Size = new System.Drawing.Size(300, 30);
             this.cbFilterWorkshops.TabIndex = 13;
             this.cbFilterWorkshops.Text = "Choose workshop type";
             this.cbFilterWorkshops.SelectedIndexChanged += new System.EventHandler(this.cbFilterWorkshops_SelectedIndexChanged);
             // 
             // btnStartWorkshop
             // 
-            this.btnStartWorkshop.Location = new System.Drawing.Point(166, 455);
+            this.btnStartWorkshop.Location = new System.Drawing.Point(203, 501);
+            this.btnStartWorkshop.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnStartWorkshop.Name = "btnStartWorkshop";
-            this.btnStartWorkshop.Size = new System.Drawing.Size(195, 43);
+            this.btnStartWorkshop.Size = new System.Drawing.Size(238, 47);
             this.btnStartWorkshop.TabIndex = 6;
             this.btnStartWorkshop.Text = "Start workshop";
             this.btnStartWorkshop.UseVisualStyleBackColor = true;
@@ -367,19 +407,21 @@ namespace WorkshopManagementApp
             // 
             // btnAssignPeople
             // 
-            this.btnAssignPeople.Location = new System.Drawing.Point(779, 202);
+            this.btnAssignPeople.Location = new System.Drawing.Point(952, 222);
+            this.btnAssignPeople.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnAssignPeople.Name = "btnAssignPeople";
-            this.btnAssignPeople.Size = new System.Drawing.Size(210, 43);
+            this.btnAssignPeople.Size = new System.Drawing.Size(257, 47);
             this.btnAssignPeople.TabIndex = 4;
-            this.btnAssignPeople.Text = "AssignPeople";
+            this.btnAssignPeople.Text = "Add people to workshop";
             this.btnAssignPeople.UseVisualStyleBackColor = true;
             this.btnAssignPeople.Click += new System.EventHandler(this.btnAssignPeople_Click);
             // 
             // btnRemoveWorkshop
             // 
-            this.btnRemoveWorkshop.Location = new System.Drawing.Point(779, 329);
+            this.btnRemoveWorkshop.Location = new System.Drawing.Point(952, 362);
+            this.btnRemoveWorkshop.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnRemoveWorkshop.Name = "btnRemoveWorkshop";
-            this.btnRemoveWorkshop.Size = new System.Drawing.Size(210, 43);
+            this.btnRemoveWorkshop.Size = new System.Drawing.Size(257, 47);
             this.btnRemoveWorkshop.TabIndex = 3;
             this.btnRemoveWorkshop.Text = "Remove";
             this.btnRemoveWorkshop.UseVisualStyleBackColor = true;
@@ -387,9 +429,10 @@ namespace WorkshopManagementApp
             // 
             // btnEditWorkshop
             // 
-            this.btnEditWorkshop.Location = new System.Drawing.Point(779, 268);
+            this.btnEditWorkshop.Location = new System.Drawing.Point(952, 295);
+            this.btnEditWorkshop.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnEditWorkshop.Name = "btnEditWorkshop";
-            this.btnEditWorkshop.Size = new System.Drawing.Size(210, 43);
+            this.btnEditWorkshop.Size = new System.Drawing.Size(257, 47);
             this.btnEditWorkshop.TabIndex = 2;
             this.btnEditWorkshop.Text = "Edit / View details";
             this.btnEditWorkshop.UseVisualStyleBackColor = true;
@@ -397,20 +440,24 @@ namespace WorkshopManagementApp
             // 
             // lbxWorkshops
             // 
+            this.lbxWorkshops.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbxWorkshops.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.lbxWorkshops.FormattingEnabled = true;
-            this.lbxWorkshops.ItemHeight = 20;
-            this.lbxWorkshops.Location = new System.Drawing.Point(47, 131);
+            this.lbxWorkshops.ItemHeight = 25;
+            this.lbxWorkshops.Location = new System.Drawing.Point(57, 144);
+            this.lbxWorkshops.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lbxWorkshops.Name = "lbxWorkshops";
-            this.lbxWorkshops.Size = new System.Drawing.Size(712, 304);
+            this.lbxWorkshops.Size = new System.Drawing.Size(869, 329);
             this.lbxWorkshops.TabIndex = 0;
             // 
             // tabPagePeople
             // 
             this.tabPagePeople.Controls.Add(this.tabControlPeopleMenu);
-            this.tabPagePeople.Location = new System.Drawing.Point(4, 29);
+            this.tabPagePeople.Location = new System.Drawing.Point(4, 31);
+            this.tabPagePeople.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabPagePeople.Name = "tabPagePeople";
-            this.tabPagePeople.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPagePeople.Size = new System.Drawing.Size(1027, 578);
+            this.tabPagePeople.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.tabPagePeople.Size = new System.Drawing.Size(1257, 637);
             this.tabPagePeople.TabIndex = 1;
             this.tabPagePeople.Text = "People";
             this.tabPagePeople.UseVisualStyleBackColor = true;
@@ -419,20 +466,22 @@ namespace WorkshopManagementApp
             // 
             this.tabControlPeopleMenu.Controls.Add(this.tabPageRegisterPerson);
             this.tabControlPeopleMenu.Controls.Add(this.tabPageManagePeople);
-            this.tabControlPeopleMenu.Location = new System.Drawing.Point(6, 16);
+            this.tabControlPeopleMenu.Location = new System.Drawing.Point(7, 18);
+            this.tabControlPeopleMenu.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabControlPeopleMenu.Name = "tabControlPeopleMenu";
             this.tabControlPeopleMenu.SelectedIndex = 0;
-            this.tabControlPeopleMenu.Size = new System.Drawing.Size(1008, 556);
+            this.tabControlPeopleMenu.Size = new System.Drawing.Size(1232, 612);
             this.tabControlPeopleMenu.TabIndex = 0;
             this.tabControlPeopleMenu.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControlPeopleMenu_Selected);
             // 
             // tabPageRegisterPerson
             // 
             this.tabPageRegisterPerson.Controls.Add(this.gbxRegisterPerson);
-            this.tabPageRegisterPerson.Location = new System.Drawing.Point(4, 29);
+            this.tabPageRegisterPerson.Location = new System.Drawing.Point(4, 31);
+            this.tabPageRegisterPerson.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabPageRegisterPerson.Name = "tabPageRegisterPerson";
-            this.tabPageRegisterPerson.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageRegisterPerson.Size = new System.Drawing.Size(1000, 523);
+            this.tabPageRegisterPerson.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.tabPageRegisterPerson.Size = new System.Drawing.Size(1224, 577);
             this.tabPageRegisterPerson.TabIndex = 0;
             this.tabPageRegisterPerson.Text = "Register person";
             this.tabPageRegisterPerson.UseVisualStyleBackColor = true;
@@ -450,9 +499,11 @@ namespace WorkshopManagementApp
             this.gbxRegisterPerson.Controls.Add(this.lbFName);
             this.gbxRegisterPerson.Controls.Add(this.tbxPcn);
             this.gbxRegisterPerson.Controls.Add(this.lbPcn);
-            this.gbxRegisterPerson.Location = new System.Drawing.Point(266, 91);
+            this.gbxRegisterPerson.Location = new System.Drawing.Point(325, 100);
+            this.gbxRegisterPerson.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.gbxRegisterPerson.Name = "gbxRegisterPerson";
-            this.gbxRegisterPerson.Size = new System.Drawing.Size(440, 368);
+            this.gbxRegisterPerson.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.gbxRegisterPerson.Size = new System.Drawing.Size(538, 405);
             this.gbxRegisterPerson.TabIndex = 0;
             this.gbxRegisterPerson.TabStop = false;
             this.gbxRegisterPerson.Text = "Register person";
@@ -463,42 +514,47 @@ namespace WorkshopManagementApp
             this.cbUserType.Items.AddRange(new object[] {
             "Student",
             "Teacher"});
-            this.cbUserType.Location = new System.Drawing.Point(181, 241);
+            this.cbUserType.Location = new System.Drawing.Point(221, 265);
+            this.cbUserType.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cbUserType.Name = "cbUserType";
-            this.cbUserType.Size = new System.Drawing.Size(201, 28);
+            this.cbUserType.Size = new System.Drawing.Size(245, 30);
             this.cbUserType.TabIndex = 5;
             this.cbUserType.Text = "Student/teacher";
             // 
             // lbUserType
             // 
             this.lbUserType.AutoSize = true;
-            this.lbUserType.Location = new System.Drawing.Point(68, 244);
+            this.lbUserType.Location = new System.Drawing.Point(91, 268);
+            this.lbUserType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbUserType.Name = "lbUserType";
-            this.lbUserType.Size = new System.Drawing.Size(81, 20);
+            this.lbUserType.Size = new System.Drawing.Size(102, 22);
             this.lbUserType.TabIndex = 5;
             this.lbUserType.Text = "User type:";
             // 
             // tbxEmail
             // 
-            this.tbxEmail.Location = new System.Drawing.Point(180, 192);
+            this.tbxEmail.Location = new System.Drawing.Point(220, 211);
+            this.tbxEmail.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tbxEmail.Name = "tbxEmail";
-            this.tbxEmail.Size = new System.Drawing.Size(202, 26);
+            this.tbxEmail.Size = new System.Drawing.Size(246, 28);
             this.tbxEmail.TabIndex = 4;
             // 
             // lbEmail
             // 
             this.lbEmail.AutoSize = true;
-            this.lbEmail.Location = new System.Drawing.Point(94, 195);
+            this.lbEmail.Location = new System.Drawing.Point(128, 217);
+            this.lbEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbEmail.Name = "lbEmail";
-            this.lbEmail.Size = new System.Drawing.Size(52, 20);
+            this.lbEmail.Size = new System.Drawing.Size(65, 22);
             this.lbEmail.TabIndex = 4;
             this.lbEmail.Text = "Email:";
             // 
             // btnRegisterPerson
             // 
-            this.btnRegisterPerson.Location = new System.Drawing.Point(180, 295);
+            this.btnRegisterPerson.Location = new System.Drawing.Point(220, 325);
+            this.btnRegisterPerson.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnRegisterPerson.Name = "btnRegisterPerson";
-            this.btnRegisterPerson.Size = new System.Drawing.Size(202, 38);
+            this.btnRegisterPerson.Size = new System.Drawing.Size(247, 42);
             this.btnRegisterPerson.TabIndex = 6;
             this.btnRegisterPerson.Text = "Register person";
             this.btnRegisterPerson.UseVisualStyleBackColor = true;
@@ -506,49 +562,55 @@ namespace WorkshopManagementApp
             // 
             // tbxLName
             // 
-            this.tbxLName.Location = new System.Drawing.Point(180, 146);
+            this.tbxLName.Location = new System.Drawing.Point(220, 161);
+            this.tbxLName.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tbxLName.Name = "tbxLName";
-            this.tbxLName.Size = new System.Drawing.Size(202, 26);
+            this.tbxLName.Size = new System.Drawing.Size(246, 28);
             this.tbxLName.TabIndex = 3;
             // 
             // lbLName
             // 
             this.lbLName.AutoSize = true;
-            this.lbLName.Location = new System.Drawing.Point(68, 149);
+            this.lbLName.Location = new System.Drawing.Point(85, 167);
+            this.lbLName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbLName.Name = "lbLName";
-            this.lbLName.Size = new System.Drawing.Size(88, 20);
+            this.lbLName.Size = new System.Drawing.Size(108, 22);
             this.lbLName.TabIndex = 3;
             this.lbLName.Text = "Last name:";
             // 
             // tbxFName
             // 
-            this.tbxFName.Location = new System.Drawing.Point(180, 101);
+            this.tbxFName.Location = new System.Drawing.Point(220, 111);
+            this.tbxFName.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tbxFName.Name = "tbxFName";
-            this.tbxFName.Size = new System.Drawing.Size(202, 26);
+            this.tbxFName.Size = new System.Drawing.Size(246, 28);
             this.tbxFName.TabIndex = 2;
             // 
             // lbFName
             // 
             this.lbFName.AutoSize = true;
-            this.lbFName.Location = new System.Drawing.Point(68, 107);
+            this.lbFName.Location = new System.Drawing.Point(83, 117);
+            this.lbFName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbFName.Name = "lbFName";
-            this.lbFName.Size = new System.Drawing.Size(88, 20);
+            this.lbFName.Size = new System.Drawing.Size(110, 22);
             this.lbFName.TabIndex = 2;
             this.lbFName.Text = "First name:";
             // 
             // tbxPcn
             // 
-            this.tbxPcn.Location = new System.Drawing.Point(180, 57);
+            this.tbxPcn.Location = new System.Drawing.Point(220, 63);
+            this.tbxPcn.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tbxPcn.Name = "tbxPcn";
-            this.tbxPcn.Size = new System.Drawing.Size(202, 26);
+            this.tbxPcn.Size = new System.Drawing.Size(246, 28);
             this.tbxPcn.TabIndex = 1;
             // 
             // lbPcn
             // 
             this.lbPcn.AutoSize = true;
-            this.lbPcn.Location = new System.Drawing.Point(111, 60);
+            this.lbPcn.Location = new System.Drawing.Point(136, 66);
+            this.lbPcn.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbPcn.Name = "lbPcn";
-            this.lbPcn.Size = new System.Drawing.Size(45, 20);
+            this.lbPcn.Size = new System.Drawing.Size(57, 22);
             this.lbPcn.TabIndex = 1;
             this.lbPcn.Text = "PCN:";
             // 
@@ -559,10 +621,11 @@ namespace WorkshopManagementApp
             this.tabPageManagePeople.Controls.Add(this.btnRemovePerson);
             this.tabPageManagePeople.Controls.Add(this.btnEditPerson);
             this.tabPageManagePeople.Controls.Add(this.lbxPeople);
-            this.tabPageManagePeople.Location = new System.Drawing.Point(4, 29);
+            this.tabPageManagePeople.Location = new System.Drawing.Point(4, 31);
+            this.tabPageManagePeople.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabPageManagePeople.Name = "tabPageManagePeople";
-            this.tabPageManagePeople.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageManagePeople.Size = new System.Drawing.Size(1000, 523);
+            this.tabPageManagePeople.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.tabPageManagePeople.Size = new System.Drawing.Size(1224, 577);
             this.tabPageManagePeople.TabIndex = 1;
             this.tabPageManagePeople.Text = "Manage people";
             this.tabPageManagePeople.UseVisualStyleBackColor = true;
@@ -570,9 +633,11 @@ namespace WorkshopManagementApp
             // gbxFilterPeople
             // 
             this.gbxFilterPeople.Controls.Add(this.cbFilterPeople);
-            this.gbxFilterPeople.Location = new System.Drawing.Point(49, 75);
+            this.gbxFilterPeople.Location = new System.Drawing.Point(60, 83);
+            this.gbxFilterPeople.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.gbxFilterPeople.Name = "gbxFilterPeople";
-            this.gbxFilterPeople.Size = new System.Drawing.Size(712, 92);
+            this.gbxFilterPeople.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.gbxFilterPeople.Size = new System.Drawing.Size(870, 101);
             this.gbxFilterPeople.TabIndex = 14;
             this.gbxFilterPeople.TabStop = false;
             this.gbxFilterPeople.Text = "Show students/teachers";
@@ -584,27 +649,30 @@ namespace WorkshopManagementApp
             "All",
             "Student",
             "Teacher"});
-            this.cbFilterPeople.Location = new System.Drawing.Point(220, 40);
+            this.cbFilterPeople.Location = new System.Drawing.Point(269, 44);
+            this.cbFilterPeople.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cbFilterPeople.Name = "cbFilterPeople";
-            this.cbFilterPeople.Size = new System.Drawing.Size(246, 28);
+            this.cbFilterPeople.Size = new System.Drawing.Size(300, 30);
             this.cbFilterPeople.TabIndex = 13;
             this.cbFilterPeople.Text = "Choose students/teachers...";
             this.cbFilterPeople.SelectedIndexChanged += new System.EventHandler(this.cbFilterPeople_SelectedIndexChanged);
             // 
             // btnViewEnrollmentsPerson
             // 
-            this.btnViewEnrollmentsPerson.Location = new System.Drawing.Point(785, 393);
+            this.btnViewEnrollmentsPerson.Location = new System.Drawing.Point(959, 432);
+            this.btnViewEnrollmentsPerson.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnViewEnrollmentsPerson.Name = "btnViewEnrollmentsPerson";
-            this.btnViewEnrollmentsPerson.Size = new System.Drawing.Size(157, 43);
+            this.btnViewEnrollmentsPerson.Size = new System.Drawing.Size(192, 47);
             this.btnViewEnrollmentsPerson.TabIndex = 12;
             this.btnViewEnrollmentsPerson.Text = "View enrollments";
             this.btnViewEnrollmentsPerson.UseVisualStyleBackColor = true;
             // 
             // btnRemovePerson
             // 
-            this.btnRemovePerson.Location = new System.Drawing.Point(785, 315);
+            this.btnRemovePerson.Location = new System.Drawing.Point(959, 347);
+            this.btnRemovePerson.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnRemovePerson.Name = "btnRemovePerson";
-            this.btnRemovePerson.Size = new System.Drawing.Size(157, 43);
+            this.btnRemovePerson.Size = new System.Drawing.Size(192, 47);
             this.btnRemovePerson.TabIndex = 10;
             this.btnRemovePerson.Text = "Remove";
             this.btnRemovePerson.UseVisualStyleBackColor = true;
@@ -612,9 +680,10 @@ namespace WorkshopManagementApp
             // 
             // btnEditPerson
             // 
-            this.btnEditPerson.Location = new System.Drawing.Point(785, 231);
+            this.btnEditPerson.Location = new System.Drawing.Point(959, 254);
+            this.btnEditPerson.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnEditPerson.Name = "btnEditPerson";
-            this.btnEditPerson.Size = new System.Drawing.Size(157, 43);
+            this.btnEditPerson.Size = new System.Drawing.Size(192, 47);
             this.btnEditPerson.TabIndex = 9;
             this.btnEditPerson.Text = "Edit";
             this.btnEditPerson.UseVisualStyleBackColor = true;
@@ -622,32 +691,28 @@ namespace WorkshopManagementApp
             // 
             // lbxPeople
             // 
+            this.lbxPeople.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbxPeople.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.lbxPeople.FormattingEnabled = true;
-            this.lbxPeople.ItemHeight = 20;
-            this.lbxPeople.Location = new System.Drawing.Point(49, 185);
+            this.lbxPeople.ItemHeight = 25;
+            this.lbxPeople.Location = new System.Drawing.Point(60, 204);
+            this.lbxPeople.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lbxPeople.Name = "lbxPeople";
-            this.lbxPeople.Size = new System.Drawing.Size(712, 304);
+            this.lbxPeople.Size = new System.Drawing.Size(869, 329);
             this.lbxPeople.TabIndex = 8;
-            // 
-            // btnGeneratePrintableFileAvailableWorkshops
-            // 
-            this.btnGeneratePrintableFileAvailableWorkshops.BackColor = System.Drawing.Color.Coral;
-            this.btnGeneratePrintableFileAvailableWorkshops.Location = new System.Drawing.Point(779, 43);
-            this.btnGeneratePrintableFileAvailableWorkshops.Name = "btnGeneratePrintableFileAvailableWorkshops";
-            this.btnGeneratePrintableFileAvailableWorkshops.Size = new System.Drawing.Size(210, 65);
-            this.btnGeneratePrintableFileAvailableWorkshops.TabIndex = 17;
-            this.btnGeneratePrintableFileAvailableWorkshops.Text = "Generate printable file with available workshops";
-            this.btnGeneratePrintableFileAvailableWorkshops.UseVisualStyleBackColor = false;
-            this.btnGeneratePrintableFileAvailableWorkshops.Click += new System.EventHandler(this.btnGeneratePrintableFileAvailableWorkshops_Click);
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1050, 627);
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(1283, 690);
             this.Controls.Add(this.tabControlMainMenu);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "MainForm";
             this.Text = "WorkshopManagement App";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.tabControlMainMenu.ResumeLayout(false);
             this.tabPageWorkshops.ResumeLayout(false);
             this.tabControlWorkshopMenu.ResumeLayout(false);

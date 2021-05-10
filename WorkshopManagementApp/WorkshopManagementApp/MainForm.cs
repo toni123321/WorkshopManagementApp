@@ -124,14 +124,12 @@ namespace WorkshopManagementApp
                     Workshop newWorkshop;
                     if (cbChooseWorkshop.SelectedItem.ToString() == "Onsite")
                     {
-                        newWorkshop = new OnsiteWorkshop(-1,
-                            tbxTitle.Text, tbxShortDescription.Text, Convert.ToInt32(tbxCapacity.Text),
+                        newWorkshop = new OnsiteWorkshop(tbxTitle.Text, tbxShortDescription.Text, Convert.ToInt32(tbxCapacity.Text),
                             tbxAddress.Text, tbxRoomNum.Text);
                     }
                     else
                     {
-                        newWorkshop = new OnlineWorkshop(-1,
-                            tbxTitle.Text, tbxShortDescription.Text, Convert.ToInt32(tbxCapacity.Text),
+                        newWorkshop = new OnlineWorkshop(tbxTitle.Text, tbxShortDescription.Text, Convert.ToInt32(tbxCapacity.Text),
                             tbxUrl.Text);
                     }
 

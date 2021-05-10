@@ -61,7 +61,7 @@ namespace DataAccessLayer
             }
             catch (IOException ex)
             {
-                MessageBox.Show("Error writing file");
+                MessageBox.Show(ex.Message);
             }
             finally
             { if (sw != null) { sw.Close(); } }
