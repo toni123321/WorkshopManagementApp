@@ -70,6 +70,7 @@ namespace WorkshopManagementApp
             tbxTitle.Text = selectedWorkshop.Title;
             tbxCapacity.Text = selectedWorkshop.Capacity.ToString();
             tbxShortDescription.Text = selectedWorkshop.ShortDescription;
+            
 
             if (selectedWorkshop is OnsiteWorkshop)
             {
@@ -111,6 +112,7 @@ namespace WorkshopManagementApp
                                  isWorkshopSpecificInputsFilled;
             return isInputFilled;
         }
+        
 
         private void btnEditWorkshop_Click(object sender, EventArgs e)
         {
@@ -123,13 +125,16 @@ namespace WorkshopManagementApp
                     {
                         newWorkshop = new OnsiteWorkshop(Convert.ToInt32(tbxId.Text),
                             tbxTitle.Text, tbxShortDescription.Text, Convert.ToInt32(tbxCapacity.Text),
-                            tbxAddress.Text, tbxRoomNum.Text);
+                            selectedWorkshop.NrOfParticipants, selectedWorkshop.IsAvailable,
+                            selectedWorkshop.IsStarted,
+                            selectedWorkshop.Teacher, tbxAddress.Text, tbxRoomNum.Text);
                     }
                     else
                     {
                         newWorkshop = new OnlineWorkshop(Convert.ToInt32(tbxId.Text),
                             tbxTitle.Text, tbxShortDescription.Text, Convert.ToInt32(tbxCapacity.Text),
-                            tbxUrl.Text);
+                            selectedWorkshop.NrOfParticipants, selectedWorkshop.IsAvailable, selectedWorkshop.IsStarted,
+                            selectedWorkshop.Teacher, tbxUrl.Text);
                     }
 
                     if (organisation.WorkshopManager.UpdateWorkshop(newWorkshop))
@@ -163,10 +168,10 @@ namespace WorkshopManagementApp
             mainForm.UpdateManageWorkshops();
         }
 
-        private void UpdateLbxParticipants()
+        private void UpdateLbxParticipants(List<Person> people)
         {
             lbxParticipants.Items.Clear();
-            foreach (Person p in organisation.WorkshopPersonManager.GetPeopleAssignToWorkshop(selectedWorkshop))
+            foreach (Person p in people)
             {
                 lbxParticipants.Items.Add(p);
             }
@@ -183,11 +188,12 @@ namespace WorkshopManagementApp
                     {
                         if (organisation.WorkshopPersonManager.AssignPersonToWorkshop(-1, selectedWorkshop, selectedPerson))
                         {
-                            MessageBox.Show($"You have successfully assigned person with pcn: {selectedPerson.Pcn} to this workshop!");
+                            MessageBox.Show($"You have successfully assigned person with pcn: {selectedPerson.Pcn} as a teacher of this workshop!");
                         }
                         else
                         {
-                            MessageBox.Show($"This person is already participant of the workshop!");
+                            MessageBox.Show($"This person is a participant in the workshop! Can't be both participant and teacher!");
+                            
                         }
                     }
                     else
@@ -211,30 +217,27 @@ namespace WorkshopManagementApp
             if (lbxPeople.SelectedIndex != -1)
             {
                 Person selectedPerson = (Person)lbxPeople.SelectedItem;
-                //TODO: decide if teacher can attend workshop as student
-                if (selectedPerson is Student)
+                
+                
+                if (organisation.WorkshopPersonManager.AssignPersonToWorkshop(-1, selectedWorkshop, selectedPerson))
                 {
-                    if (organisation.WorkshopPersonManager.AssignPersonToWorkshop(-1, selectedWorkshop, selectedPerson))
-                    {
-                        MessageBox.Show($"You have successfully assigned person with pcn: {selectedPerson.Pcn} to this workshop!");
-                    }
-                    else
-                    {
-                        if (organisation.WorkshopPersonManager.GetNrOfParticipantsPerWorkshop(selectedWorkshop) ==
-                            selectedWorkshop.Capacity)
-                        {
-                            MessageBox.Show($"The participants' limit for this workshop is reached!");
-                        }
-                        else
-                        {
-                            MessageBox.Show($"This person is already participant of the workshop!");
-                        }
-                    }
-                    
+                    MessageBox.Show($"You have successfully assigned person with pcn: {selectedPerson.Pcn} to this workshop!");
                 }
                 else
                 {
-                    MessageBox.Show("This person is not a student. So can't be assigned as student to the workshop!");
+                    if (selectedWorkshop.Teacher.Pcn == selectedPerson.Pcn)
+                    {
+                        MessageBox.Show($"This person is already the teacher of this workshop!");
+                    }
+                    else if (organisation.WorkshopPersonManager.GetNrOfParticipantsPerWorkshop(selectedWorkshop) ==
+                        selectedWorkshop.Capacity)
+                    {
+                        MessageBox.Show($"The participants' limit for this workshop is reached!");
+                    }
+                    else
+                    {
+                       MessageBox.Show($"This person is already participant in the workshop!");
+                    }
                 }
             }
             else
@@ -252,7 +255,7 @@ namespace WorkshopManagementApp
                 if(organisation.WorkshopPersonManager.RemoveWorkshopParticipant(selectedWorkshop, selectedPerson))
                 {
                     MessageBox.Show($"You have successfully removed participant with PCN:{selectedPerson.Pcn} from the workshop!");
-                    UpdateLbxParticipants();
+                    UpdateLbxParticipants(organisation.WorkshopPersonManager.GetPeopleAssignToWorkshop(selectedWorkshop));
                 }
                 else
                 {
@@ -283,24 +286,76 @@ namespace WorkshopManagementApp
             }
         }
 
+        private void UpdateSelectedWorkshop()
+        {
+            selectedWorkshop = organisation.WorkshopManager.GetWorkshop(selectedWorkshop.Id);
+        }
+
         private void tabControlWorkshopMenu_Selected(object sender, TabControlEventArgs e)
         {
-            if(tabControlWorkshopMenu.SelectedTab.Name == "tabPageAssignPeople")
+            if (tabControlWorkshopMenu.SelectedTab.Name == "tabPageEditWorkshop")
             {
+                FillInputs();
+            }
+            else if(tabControlWorkshopMenu.SelectedTab.Name == "tabPageAssignPeople")
+            {
+                cbFilterPeople.SelectedIndex = 0;
                 UpdateLbxPeople(organisation.PersonManager.GetAllPeople());
             }
             else if (tabControlWorkshopMenu.SelectedTab.Name == "tabPageManageParticipants")
             {
-                UpdateLbxParticipants();
+                cbFilterParticipants.SelectedIndex = 0;
+                UpdateLbxParticipants(organisation.WorkshopPersonManager.GetPeopleAssignToWorkshop(selectedWorkshop));
             }
+
+            UpdateSelectedWorkshop();
         }
 
         public void ManageSelectedTab()
         {
             tabControlWorkshopMenu.SelectedIndex = 1;
+            cbFilterPeople.SelectedIndex = 0;
             UpdateLbxPeople(organisation.PersonManager.GetAllPeople());
         }
 
-       
+        private void cbFilterPeople_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbFilterPeople.SelectedItem.ToString() == "All")
+            {
+                UpdateLbxPeople(organisation.PersonManager.GetAllPeople());
+            }
+            else if (cbFilterPeople.SelectedItem.ToString() == "Student")
+            {
+                UpdateLbxPeople(organisation.PersonManager.GetStudents());
+            }
+            else
+            {
+                UpdateLbxPeople(organisation.PersonManager.GetTeachers());
+            }
+        }
+
+        private void cbFilterParticipants_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbFilterParticipants.SelectedItem.ToString() == "All")
+            {
+                UpdateLbxParticipants(organisation.WorkshopPersonManager.GetPeopleAssignToWorkshop(selectedWorkshop));
+            }
+            else if (cbFilterParticipants.SelectedItem.ToString() == "Teacher")
+            {
+                lbxParticipants.Items.Clear();
+                if (selectedWorkshop.Teacher == null)
+                {
+                    lbxParticipants.Items.Add("Not selected");
+                }
+                else
+                {
+                    lbxParticipants.Items.Add(selectedWorkshop.Teacher);
+                }
+            }
+            else
+            {
+                UpdateLbxParticipants(organisation.WorkshopPersonManager.GetOnlyParticipants(selectedWorkshop));
+            }
+        }
     }
 }

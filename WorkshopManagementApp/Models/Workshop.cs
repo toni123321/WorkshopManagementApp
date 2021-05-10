@@ -87,10 +87,10 @@ namespace Models
             set
             {
                 //TODO: (0.9 * this.Capacity)
-                if (value >= (0.9 * this.Capacity))
+                /*if (value >= (0.9 * this.Capacity))
                 {
                     NotifyNewWorkshopCapacityWarning($"The nr of participants({value}) exceeds 90% of workshop capacity!");
-                }
+                }*/
                 this.nrOfParticipants = value;
             }
         }
@@ -107,6 +107,28 @@ namespace Models
             set;
         }
 
+
+        /// <summary>
+        /// Used this to:
+        /// 1) assign from the local environment to Storage
+        /// 2) To test app
+        /// </summary>
+        protected Workshop(string title, string shortDescription, int capacity)
+        {
+            this.Id = -1;
+            this.Title = title;
+            this.ShortDescription = shortDescription;
+            this.Capacity = capacity;
+
+            this.NrOfParticipants = 0;
+            this.IsAvailable = true;
+            this.IsStarted = false;
+            this.Teacher = null;
+        }
+
+        /// <summary>
+        /// Used only from the Storage: for example DB
+        /// </summary>
         protected Workshop(int id, string title, string shortDescription, int capacity, 
             int nrOfParticipants, bool isAvailable, bool isStarted, Person teacher)
         {
@@ -121,17 +143,7 @@ namespace Models
             this.Teacher = teacher;
         }
 
-        protected Workshop(int id, string title, string shortDescription, int capacity)
-        {
-            this.Id = id;
-            this.Title = title;
-            this.ShortDescription = shortDescription;
-            this.Capacity = capacity;
-
-            this.NrOfParticipants = 0;
-            this.IsAvailable = true;
-            this.IsStarted = false;
-        }
+       
 
         public override string ToString()
         {
@@ -150,5 +162,15 @@ namespace Models
         
             }
         }
+
+        public void CheckCapacity()
+        {
+            if (this.NrOfParticipants >= 1)
+            {
+                NotifyNewWorkshopCapacityWarning($"The nr of participants({this.NrOfParticipants}) exceeds 90% of workshop capacity!");
+            }
+        }
+
     }
 }
+

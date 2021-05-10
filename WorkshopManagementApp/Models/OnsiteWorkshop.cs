@@ -46,6 +46,13 @@ namespace Models
             }
         }
 
+        public OnsiteWorkshop(string title, string shortDescription, int capacity, string address, string roomNumber)
+            : base(title, shortDescription, capacity)
+        {
+            this.Address = address;
+            this.RoomNumber = roomNumber;
+        }
+
         public OnsiteWorkshop(int id, string title, string shortDescription, int capacity, int nrOfParticipants, bool isAvailable, bool isStarted, Person teacher, string address, string roomNumber) 
             : base(id, title, shortDescription, capacity, nrOfParticipants, isAvailable, isStarted, teacher)
         {
@@ -53,12 +60,7 @@ namespace Models
             this.RoomNumber = roomNumber;
         }
 
-        public OnsiteWorkshop(int id, string title, string shortDescription, int capacity, string address, string roomNumber)
-            : base(id, title, shortDescription, capacity)
-        {
-            this.Address = address;
-            this.RoomNumber = roomNumber;
-        }
+        
 
         public override string ToString()
         {

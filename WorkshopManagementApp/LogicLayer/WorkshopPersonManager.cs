@@ -60,6 +60,7 @@ namespace LogicLayer
                 
                 storage.Create(currWorkshopPerson);
                 LoadDataFromStorage();
+
                 //workshopPeople.Add(currWorkshopPerson);
                 
                 if (p is Teacher)
@@ -69,6 +70,7 @@ namespace LogicLayer
                 else
                 {
                     w.NrOfParticipants = GetNrOfParticipantsPerWorkshop(w);
+                    w.CheckCapacity();
                 }
                 //TODO: Update here workshop
                 workshopManager.UpdateWorkshop(w);
@@ -107,6 +109,24 @@ namespace LogicLayer
             return people;
         }
 
+        public List<Person> GetOnlyParticipants(Workshop w)
+        {
+            List<Person> people = new List<Person>();
+            foreach (WorkshopPerson wp in this.workshopPeople)
+            {
+                if (wp.Workshop.Id == w.Id)
+                {
+                    if (w.Teacher != null && w.Teacher.Pcn == wp.Person.Pcn)
+                    {
+                        continue;
+                    }
+                    people.Add(wp.Person);
+                }
+            }
+
+            return people;
+        }
+
         public List<Workshop> GetWorkshopsPersonAssignTo(Person p)
         {
             List<Workshop> workshops = new List<Workshop>();
@@ -133,6 +153,7 @@ namespace LogicLayer
 
             return null;
         }
+
 
         public bool RemoveWorkshopParticipant(Workshop w, Person p)
         {

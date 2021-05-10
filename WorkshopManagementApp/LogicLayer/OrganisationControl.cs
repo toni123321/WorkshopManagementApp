@@ -40,7 +40,7 @@ namespace LogicLayer
             this.WorkshopManager = new WorkshopManager();
             this.WorkshopPersonManager = new WorkshopPersonManager();
         }
-
+        
         
     }
 }
