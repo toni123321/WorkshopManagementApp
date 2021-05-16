@@ -86,3 +86,4 @@ C:\Users\tonit\GitHubProjects\WorkshopManagementApp\WorkshopManagementApp\Worksh
 C:\Users\tonit\GitHubProjects\WorkshopManagementApp\WorkshopManagementApp\WorkshopManagementApp\obj\Debug\WorkshopManagementApp.pdb
 C:\Users\tonit\GitHubProjects\WorkshopManagementApp\WorkshopManagementApp\WorkshopManagementApp\bin\Debug\CustomExceptions.dll
 C:\Users\tonit\GitHubProjects\WorkshopManagementApp\WorkshopManagementApp\WorkshopManagementApp\bin\Debug\CustomExceptions.pdb
+C:\Users\tonit\GitHubProjects\WorkshopManagementApp\WorkshopManagementApp\WorkshopManagementApp\obj\Debug\WorkshopManagementApp.PersonEnrollmentsForm.resources

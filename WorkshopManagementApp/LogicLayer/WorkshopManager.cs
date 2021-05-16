@@ -16,6 +16,7 @@ namespace LogicLayer
             this.workshops = new List<Workshop>();
             this.storage = new WorkshopDbManager(
                 "Server=localhost;Uid=root;Database=workshop_management;Pwd=");
+            //this.storage = new WorkshopBinaryFileManager("test.bin");
             LoadDataFromStorage();
         }
 
@@ -26,17 +27,24 @@ namespace LogicLayer
 
         public bool AddWorkshop(Workshop workshop)
         {
-            if (GetWorkshop(workshop.Id) != null)
+            if (workshop.Id != "000000" && GetWorkshop(workshop.Id) != null)
             {
                 return false;
             }
+
+            if (workshop.Id == "000000")
+            {
+                WorkshopIdGenerator workshopIdGenerator = new WorkshopIdGenerator(workshops);
+                workshop.Id = workshopIdGenerator.GenerateId();
+            }
+
             storage.Create(workshop);
             LoadDataFromStorage();
             //workshops.Add(workshop);
             return true;
         }
 
-        public bool RemoveWorkshop(int id)
+        public bool RemoveWorkshop(string id)
         {
             if (GetWorkshop(id) != null)
             {
@@ -67,7 +75,7 @@ namespace LogicLayer
             return false;
         }
 
-        public Workshop GetWorkshop(int id)
+        public Workshop GetWorkshop(string id)
         {
             foreach (Workshop w in workshops)
             {

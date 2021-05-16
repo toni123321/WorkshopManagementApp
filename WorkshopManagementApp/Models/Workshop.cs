@@ -6,21 +6,34 @@ using CustomExceptions;
 
 namespace Models
 {
+    [Serializable]
     public abstract class Workshop
     {
         public delegate void CapacityHandle(string message);
 
         public event CapacityHandle ExceedAlmostFullCapacity;
 
+        private string id;
         private string title;
         private string shortDescription;
         private int capacity;
         private int nrOfParticipants;
 
-        public int Id
+        public string Id
         {
-            get;
-            set;
+            get { return this.id; }
+            set
+            {
+                bool isValid = Regex.IsMatch(value, @"^[0-9]{6}$");
+                if (isValid)
+                {
+                    this.id = value;
+                }
+                else
+                {
+                    throw new InputFieldException("Id is not in the correct format!");
+                }
+            }
         }
 
         public string Title
@@ -115,7 +128,7 @@ namespace Models
         /// </summary>
         protected Workshop(string title, string shortDescription, int capacity)
         {
-            this.Id = -1;
+            this.Id = "000000";
             this.Title = title;
             this.ShortDescription = shortDescription;
             this.Capacity = capacity;
@@ -129,7 +142,7 @@ namespace Models
         /// <summary>
         /// Used only from the Storage: for example DB
         /// </summary>
-        protected Workshop(int id, string title, string shortDescription, int capacity, 
+        protected Workshop(string id, string title, string shortDescription, int capacity, 
             int nrOfParticipants, bool isAvailable, bool isStarted, Person teacher)
         {
             this.Id = id;
@@ -165,7 +178,7 @@ namespace Models
 
         public void CheckCapacity()
         {
-            if (this.NrOfParticipants >= 1)
+            if (this.NrOfParticipants >= (0.9 * this.Capacity))
             {
                 NotifyNewWorkshopCapacityWarning($"The nr of participants({this.NrOfParticipants}) exceeds 90% of workshop capacity!");
             }

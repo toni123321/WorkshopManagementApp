@@ -20,13 +20,14 @@ namespace DataAccessLayer
                 using (DbConn = new MySqlConnection(base.DbConnectionStr))
                 {
                     Workshop currWorkshop = (Workshop)obj;
-                    string sql = "INSERT into workshop(Title, ShortDescription, Capacity, NrOfParticipants, IsAvailable, IsStarted, TeacherPCN, " +
+                    string sql = "INSERT into workshop(ID, Title, ShortDescription, Capacity, NrOfParticipants, IsAvailable, IsStarted, TeacherPCN, " +
                                  "Address, RoomNr, Url) " +
-                                 "VALUES(@title, @shortDescription, @capacity, @nrOfParticipants, @isAvailable, @isStarted, @teacherPCN, " +
+                                 "VALUES(@id, @title, @shortDescription, @capacity, @nrOfParticipants, @isAvailable, @isStarted, @teacherPCN, " +
                                  "@address, @roomNr, @url)";
 
                     MySqlCommand cmd = new MySqlCommand(sql, DbConn);
 
+                    cmd.Parameters.AddWithValue("@id", currWorkshop.Id);
                     cmd.Parameters.AddWithValue("@title", currWorkshop.Title);
                     cmd.Parameters.AddWithValue("@shortDescription", currWorkshop.Title);
                     cmd.Parameters.AddWithValue("@capacity", currWorkshop.Capacity);
@@ -101,7 +102,7 @@ namespace DataAccessLayer
 
                     while (dr.Read())
                     {
-                        int id = Convert.ToInt32(dr[0]);
+                        string id = dr[0].ToString();
                         string title = dr[1].ToString();
                         string shortDescription = dr[2].ToString();
                         int capacity = Convert.ToInt32(dr[3]);

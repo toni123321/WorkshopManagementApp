@@ -21,10 +21,13 @@ namespace DataAccessLayer
                 {
                     WorkshopPerson currWorkshopPerson = obj as WorkshopPerson;
                     
-                    string sql = "INSERT into workshop_person(WorkshopID, PersonPcn, SeatNr, LoginCode) " +
-                                 "VALUES(@workshopId, @personPcn, @seatNr, @loginCode)";
+                    string sql = "INSERT into workshop_person(ID, WorkshopID, PersonPcn, SeatNr, LoginCode) " +
+                                 "VALUES(@id, @workshopId, @personPcn, @seatNr, @loginCode)";
 
                     MySqlCommand cmd = new MySqlCommand(sql, DbConn);
+
+
+                    cmd.Parameters.AddWithValue("@id", currWorkshopPerson.Id);
 
                     cmd.Parameters.AddWithValue("@workshopId", currWorkshopPerson.Workshop.Id);
                     cmd.Parameters.AddWithValue("@personPcn", currWorkshopPerson.Person.Pcn);
@@ -88,8 +91,8 @@ namespace DataAccessLayer
 
                     while (dr.Read())
                     {
-                        int id = Convert.ToInt32(dr[0]);
-                        int workshopId = Convert.ToInt32(dr[1]);
+                        string id = dr[0].ToString();
+                        string workshopId = dr[1].ToString();
                         int personId = Convert.ToInt32(dr[2]);
                         int seatNr;
                         if (dr[3].ToString() != "")
@@ -159,12 +162,14 @@ namespace DataAccessLayer
                         WorkshopPerson currWorkshopPerson;
                         if (loginCode != "")
                         {
-                            currWorkshopPerson = new OnlineWorkshopPerson(id, currWorkshop, currPerson, loginCode);
+                            currWorkshopPerson = new OnlineWorkshopPerson(currWorkshop, currPerson, loginCode);
                         }
                         else
                         {
-                            currWorkshopPerson = new OnsiteWorkshopPerson(id, currWorkshop, currPerson, seatNr);
+                            currWorkshopPerson = new OnsiteWorkshopPerson(currWorkshop, currPerson, seatNr);
                         }
+
+                        currWorkshopPerson.Id = id;
                         workshopPeople.Add(currWorkshopPerson);
                     }
                 }
@@ -196,7 +201,7 @@ namespace DataAccessLayer
                     string sql = "DELETE from workshop_person WHERE ID=@id";
 
                     MySqlCommand cmd = new MySqlCommand(sql, DbConn);
-                    cmd.Parameters.AddWithValue("@id", Convert.ToInt32(identifier));
+                    cmd.Parameters.AddWithValue("@id", identifier.ToString());
 
                     DbConn.Open();
                     base.ExecuteNonQuery(cmd);

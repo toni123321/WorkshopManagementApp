@@ -6,6 +6,7 @@ using CustomExceptions;
 
 namespace Models
 {
+    [Serializable]
     public class OnsiteWorkshop: Workshop
     {
         private string address;
@@ -53,7 +54,7 @@ namespace Models
             this.RoomNumber = roomNumber;
         }
 
-        public OnsiteWorkshop(int id, string title, string shortDescription, int capacity, int nrOfParticipants, bool isAvailable, bool isStarted, Person teacher, string address, string roomNumber) 
+        public OnsiteWorkshop(string id, string title, string shortDescription, int capacity, int nrOfParticipants, bool isAvailable, bool isStarted, Person teacher, string address, string roomNumber) 
             : base(id, title, shortDescription, capacity, nrOfParticipants, isAvailable, isStarted, teacher)
         {
             this.Address = address;

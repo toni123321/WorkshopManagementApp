@@ -8,30 +8,59 @@ namespace LogicLayer
 {
     public class WorkshopPersonManager
     {
-        private List<WorkshopPerson> workshopPeople;
+        
         private IStorage storage;
         private WorkshopManager workshopManager = new WorkshopManager();
 
 
+        public List<WorkshopPerson> WorkshopPeople
+        {
+            get;
+            set;
+        }
+
         public WorkshopPersonManager()
         {
-            this.workshopPeople = new List<WorkshopPerson>();
+            this.WorkshopPeople = new List<WorkshopPerson>();
             this.storage = new WorkshopPersonDbManager("Server=localhost;Uid=root;Database=workshop_management;Pwd=");
             LoadDataFromStorage();
         }
 
         public void LoadDataFromStorage()
         {
-            workshopPeople = storage.ReadAll() as List<WorkshopPerson>;
+            WorkshopPeople = storage.ReadAll() as List<WorkshopPerson>;
         }
 
-        public bool AssignPersonToWorkshop(int id, Workshop w, Person p)
+        public bool AssignTeacherToWorkshop(Workshop w, Person p)
         {
-            
-            bool isThereFreeSpot = (GetNrOfParticipantsPerWorkshop(w) < w.Capacity) ||
-                                   (GetNrOfParticipantsPerWorkshop(w) == w.Capacity &&
-                                    p is Teacher && w.Teacher == null);
+            bool isAssignPossible = GetPersonAssignToWorkshop(w, p) == null &&
+                                    p is Teacher && w.Teacher == null;
+            if (isAssignPossible)
+            {
+                WorkshopPerson currWorkshopPerson;
+                if (w is OnsiteWorkshop)
+                {
+                    currWorkshopPerson = new OnsiteWorkshopPerson(w, p);
+                }
+                else
+                {
+                    LoginCodeGenerator loginCodeGenerator = new LoginCodeGenerator(this.WorkshopPeople);
+                    currWorkshopPerson = new OnlineWorkshopPerson(w, p,
+                        loginCodeGenerator.GenerateCode(w));
+                }
 
+                storage.Create(currWorkshopPerson);
+                LoadDataFromStorage();
+                w.Teacher = p; // assign teacher to the workshop
+                workshopManager.UpdateWorkshop(w);
+                return true;
+            }
+            return false;
+        }
+
+        public bool AssignParticipantToWorkshop(Workshop w, Person p)
+        {
+            bool isThereFreeSpot = GetNrOfParticipantsPerWorkshop(w) < w.Capacity;
             bool isAssignPossible = GetPersonAssignToWorkshop(w, p) == null &&
                                     isThereFreeSpot;
             if (isAssignPossible)
@@ -39,40 +68,25 @@ namespace LogicLayer
                 WorkshopPerson currWorkshopPerson;
                 if (w is OnsiteWorkshop)
                 {
-                    SeatGenerator seatGenerator = new SeatGenerator(this.workshopPeople);
+                    SeatGenerator seatGenerator = new SeatGenerator(this.WorkshopPeople);
 
-                    if (p is Teacher)
-                    {
-                        currWorkshopPerson = new OnsiteWorkshopPerson(id, w, p);
-                    }
-                    else
-                    {
-                        currWorkshopPerson = new OnsiteWorkshopPerson(id, w, p,
+                    currWorkshopPerson = new OnsiteWorkshopPerson(w, p,
                             seatGenerator.GenerateSeat(w));
-                    }
+                    
                 }
                 else
                 {
-                    LoginCodeGenerator loginCodeGenerator = new LoginCodeGenerator(this.workshopPeople);
-                    currWorkshopPerson = new OnlineWorkshopPerson(id, w, p, 
+                    LoginCodeGenerator loginCodeGenerator = new LoginCodeGenerator(this.WorkshopPeople);
+                    currWorkshopPerson = new OnlineWorkshopPerson(w, p, 
                         loginCodeGenerator.GenerateCode(w));
                 }
                 
                 storage.Create(currWorkshopPerson);
                 LoadDataFromStorage();
-
-                //workshopPeople.Add(currWorkshopPerson);
                 
-                if (p is Teacher)
-                {
-                    w.Teacher = p;
-                }
-                else
-                {
-                    w.NrOfParticipants = GetNrOfParticipantsPerWorkshop(w);
-                    w.CheckCapacity();
-                }
-                //TODO: Update here workshop
+                w.NrOfParticipants = GetNrOfParticipantsPerWorkshop(w);
+                w.CheckCapacity();
+
                 workshopManager.UpdateWorkshop(w);
 
                 return true;
@@ -98,7 +112,7 @@ namespace LogicLayer
         public List<Person> GetPeopleAssignToWorkshop(Workshop w)
         {
             List<Person> people = new List<Person>();
-            foreach (WorkshopPerson wp in this.workshopPeople)
+            foreach (WorkshopPerson wp in this.WorkshopPeople)
             {
                 if (wp.Workshop.Id == w.Id)
                 {
@@ -112,7 +126,7 @@ namespace LogicLayer
         public List<Person> GetOnlyParticipants(Workshop w)
         {
             List<Person> people = new List<Person>();
-            foreach (WorkshopPerson wp in this.workshopPeople)
+            foreach (WorkshopPerson wp in this.WorkshopPeople)
             {
                 if (wp.Workshop.Id == w.Id)
                 {
@@ -127,23 +141,23 @@ namespace LogicLayer
             return people;
         }
 
-        public List<Workshop> GetWorkshopsPersonAssignTo(Person p)
+        public List<WorkshopPerson> GetPersonEnrollments(Person p)
         {
-            List<Workshop> workshops = new List<Workshop>();
-            foreach (WorkshopPerson wp in this.workshopPeople)
+            List<WorkshopPerson> enrollments = new List<WorkshopPerson>();
+            foreach (WorkshopPerson wp in this.WorkshopPeople)
             {
                 if (wp.Person.Pcn == p.Pcn)
                 {
-                    workshops.Add(wp.Workshop);
+                    enrollments.Add(wp);
                 }
             }
 
-            return workshops;
+            return enrollments;
         }
 
         public WorkshopPerson GetWorkshopPerson(Workshop w, Person p)
         {
-            foreach (WorkshopPerson wp in this.workshopPeople)
+            foreach (WorkshopPerson wp in this.WorkshopPeople)
             {
                 if(wp.Workshop.Id == w.Id && wp.Person.Pcn == p.Pcn)
                 {
@@ -155,7 +169,7 @@ namespace LogicLayer
         }
 
 
-        public bool RemoveWorkshopParticipant(Workshop w, Person p)
+        public bool RemovePersonAssignToWorkshop(Workshop w, Person p)
         {
             if(GetWorkshopPerson(w, p) != null)
             {
@@ -163,13 +177,13 @@ namespace LogicLayer
                 storage.Delete(currWorkshopPerson.Id);
                 LoadDataFromStorage();
                 //this.workshopPeople.Remove(currWorkshopPerson);
-                if (p is Student)
+                if (w.Teacher != null && w.Teacher.Pcn == p.Pcn)
                 {
-                    w.NrOfParticipants = GetNrOfParticipantsPerWorkshop(w);
+                    w.Teacher = null;
                 }
                 else
                 {
-                    w.Teacher = null;
+                    w.NrOfParticipants = GetNrOfParticipantsPerWorkshop(w);
                 }
                 // TODO: Update workshop here
                 workshopManager.UpdateWorkshop(w);

@@ -48,8 +48,8 @@ namespace WorkshopManagementApp
                 }
 
                 btnEditWorkshop.Enabled = false;
-                btnAssignAsTeacher.Enabled = false;
-                btnAssignAsStudent.Enabled = false;
+                btnAddTeacher.Enabled = false;
+                btnAddParticipant.Enabled = false;
                 btnRemoveParticipant.Enabled = false;
 
             }
@@ -123,7 +123,7 @@ namespace WorkshopManagementApp
                     Workshop newWorkshop;
                     if (selectedWorkshop is OnsiteWorkshop)
                     {
-                        newWorkshop = new OnsiteWorkshop(Convert.ToInt32(tbxId.Text),
+                        newWorkshop = new OnsiteWorkshop(tbxId.Text,
                             tbxTitle.Text, tbxShortDescription.Text, Convert.ToInt32(tbxCapacity.Text),
                             selectedWorkshop.NrOfParticipants, selectedWorkshop.IsAvailable,
                             selectedWorkshop.IsStarted,
@@ -131,7 +131,7 @@ namespace WorkshopManagementApp
                     }
                     else
                     {
-                        newWorkshop = new OnlineWorkshop(Convert.ToInt32(tbxId.Text),
+                        newWorkshop = new OnlineWorkshop(tbxId.Text,
                             tbxTitle.Text, tbxShortDescription.Text, Convert.ToInt32(tbxCapacity.Text),
                             selectedWorkshop.NrOfParticipants, selectedWorkshop.IsAvailable, selectedWorkshop.IsStarted,
                             selectedWorkshop.Teacher, tbxUrl.Text);
@@ -177,23 +177,23 @@ namespace WorkshopManagementApp
             }
         }
 
-        private void btnAssignAsTeacher_Click(object sender, EventArgs e)
+        private void btnAddTeacher_Click(object sender, EventArgs e)
         {
             if (lbxPeople.SelectedIndex != -1)
             {
                 Person selectedPerson = (Person)lbxPeople.SelectedItem;
-                if(selectedPerson is Teacher)
+                if (selectedPerson is Teacher)
                 {
                     if (selectedWorkshop.Teacher == null)
                     {
-                        if (organisation.WorkshopPersonManager.AssignPersonToWorkshop(-1, selectedWorkshop, selectedPerson))
+                        if (organisation.WorkshopPersonManager.AssignTeacherToWorkshop(selectedWorkshop, selectedPerson))
                         {
                             MessageBox.Show($"You have successfully assigned person with pcn: {selectedPerson.Pcn} as a teacher of this workshop!");
                         }
                         else
                         {
                             MessageBox.Show($"This person is a participant in the workshop! Can't be both participant and teacher!");
-                            
+
                         }
                     }
                     else
@@ -212,31 +212,31 @@ namespace WorkshopManagementApp
             }
         }
 
-        private void btnAssignAsStudent_Click(object sender, EventArgs e)
+        private void btnAddParticipant_Click(object sender, EventArgs e)
         {
             if (lbxPeople.SelectedIndex != -1)
             {
                 Person selectedPerson = (Person)lbxPeople.SelectedItem;
-                
-                
-                if (organisation.WorkshopPersonManager.AssignPersonToWorkshop(-1, selectedWorkshop, selectedPerson))
+
+
+                if (organisation.WorkshopPersonManager.AssignParticipantToWorkshop(selectedWorkshop, selectedPerson))
                 {
                     MessageBox.Show($"You have successfully assigned person with pcn: {selectedPerson.Pcn} to this workshop!");
                 }
                 else
                 {
-                    if (selectedWorkshop.Teacher.Pcn == selectedPerson.Pcn)
+                    if (selectedWorkshop.Teacher.Pcn != null && selectedWorkshop.Teacher.Pcn == selectedPerson.Pcn)
                     {
                         MessageBox.Show($"This person is already the teacher of this workshop!");
                     }
                     else if (organisation.WorkshopPersonManager.GetNrOfParticipantsPerWorkshop(selectedWorkshop) ==
-                        selectedWorkshop.Capacity)
+                             selectedWorkshop.Capacity)
                     {
                         MessageBox.Show($"The participants' limit for this workshop is reached!");
                     }
                     else
                     {
-                       MessageBox.Show($"This person is already participant in the workshop!");
+                        MessageBox.Show($"This person is already participant in the workshop!");
                     }
                 }
             }
@@ -252,7 +252,7 @@ namespace WorkshopManagementApp
             if (lbxParticipants.SelectedIndex != -1)
             {
                 Person selectedPerson = (Person) lbxParticipants.SelectedItem;
-                if(organisation.WorkshopPersonManager.RemoveWorkshopParticipant(selectedWorkshop, selectedPerson))
+                if(organisation.WorkshopPersonManager.RemovePersonAssignToWorkshop(selectedWorkshop, selectedPerson))
                 {
                     MessageBox.Show($"You have successfully removed participant with PCN:{selectedPerson.Pcn} from the workshop!");
                     UpdateLbxParticipants(organisation.WorkshopPersonManager.GetPeopleAssignToWorkshop(selectedWorkshop));

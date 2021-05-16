@@ -6,6 +6,7 @@ using CustomExceptions;
 
 namespace Models
 {
+    [Serializable]
     public class OnlineWorkshop: Workshop
     {
         private string url;
@@ -35,7 +36,7 @@ namespace Models
             this.Url = url;
         }
 
-        public OnlineWorkshop(int id, string title, string shortDescription, int capacity, int nrOfParticipants, bool isAvailable, bool isStarted, Person teacher, string url) 
+        public OnlineWorkshop(string id, string title, string shortDescription, int capacity, int nrOfParticipants, bool isAvailable, bool isStarted, Person teacher, string url) 
             : base(id, title, shortDescription, capacity, nrOfParticipants, isAvailable, isStarted, teacher)
         {
             this.Url = url;

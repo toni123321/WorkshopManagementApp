@@ -421,7 +421,7 @@ namespace WorkshopManagementApp
             }
             else
             {
-                if (cbUserType.SelectedIndex != -1)
+                if (cbUserType.Text != "")
                 {
                     MessageBox.Show("Please, choose user type from the dropdown instead of writing in the input field!");
                 }
@@ -499,6 +499,22 @@ namespace WorkshopManagementApp
         }
 
 
+        private void btnViewEnrollmentsPerson_Click(object sender, EventArgs e)
+        {
+            if (lbxPeople.SelectedIndex != -1)
+            {
+                Person selectedPerson = (Person)lbxPeople.SelectedItem;
+                PersonEnrollmentsForm personEnrollmentsForm = new PersonEnrollmentsForm(this, selectedPerson);
+                personEnrollmentsForm.Show();
+
+            }
+            else
+            {
+                MessageBox.Show("Please, select person to view their workshop enrollments!");
+            }
+        }
+
+
         private void btnViewAvailableWorkshops_Click(object sender, EventArgs e)
         {
             AvailableWorkshopsForm availableWorkshops = new AvailableWorkshopsForm(this.Organisation);
@@ -523,5 +539,6 @@ namespace WorkshopManagementApp
                 MessageBox.Show("You choose cancel!");
             }
         }
+
     }
 }

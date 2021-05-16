@@ -51,27 +51,27 @@ namespace WorkshopManagementApp
             this.tbxId = new System.Windows.Forms.TextBox();
             this.lbId = new System.Windows.Forms.Label();
             this.tabPageAssignPeople = new System.Windows.Forms.TabPage();
+            this.lbTeacher = new System.Windows.Forms.Label();
             this.gbxFilterPeople = new System.Windows.Forms.GroupBox();
             this.cbFilterPeople = new System.Windows.Forms.ComboBox();
-            this.btnAssignAsStudent = new System.Windows.Forms.Button();
-            this.btnAssignAsTeacher = new System.Windows.Forms.Button();
+            this.btnAddParticipant = new System.Windows.Forms.Button();
+            this.btnAddTeacher = new System.Windows.Forms.Button();
             this.lbxPeople = new System.Windows.Forms.ListBox();
             this.tabPageManageParticipants = new System.Windows.Forms.TabPage();
+            this.gbxFilterParticipants = new System.Windows.Forms.GroupBox();
+            this.cbFilterParticipants = new System.Windows.Forms.ComboBox();
             this.btnViewEnrollmentDetails = new System.Windows.Forms.Button();
             this.btnRemoveParticipant = new System.Windows.Forms.Button();
             this.lbxParticipants = new System.Windows.Forms.ListBox();
-            this.lbTeacher = new System.Windows.Forms.Label();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.gbxFilterParticipants = new System.Windows.Forms.GroupBox();
-            this.cbFilterParticipants = new System.Windows.Forms.ComboBox();
             this.tabControlWorkshopMenu.SuspendLayout();
             this.tabPageEditWorkshop.SuspendLayout();
             this.gbxEditWorkshop.SuspendLayout();
             this.tabPageAssignPeople.SuspendLayout();
             this.gbxFilterPeople.SuspendLayout();
             this.tabPageManageParticipants.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.gbxFilterParticipants.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControlWorkshopMenu
@@ -291,8 +291,8 @@ namespace WorkshopManagementApp
             this.tabPageAssignPeople.AutoScroll = true;
             this.tabPageAssignPeople.Controls.Add(this.lbTeacher);
             this.tabPageAssignPeople.Controls.Add(this.gbxFilterPeople);
-            this.tabPageAssignPeople.Controls.Add(this.btnAssignAsStudent);
-            this.tabPageAssignPeople.Controls.Add(this.btnAssignAsTeacher);
+            this.tabPageAssignPeople.Controls.Add(this.btnAddParticipant);
+            this.tabPageAssignPeople.Controls.Add(this.btnAddTeacher);
             this.tabPageAssignPeople.Controls.Add(this.lbxPeople);
             this.tabPageAssignPeople.Location = new System.Drawing.Point(4, 31);
             this.tabPageAssignPeople.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -302,6 +302,14 @@ namespace WorkshopManagementApp
             this.tabPageAssignPeople.TabIndex = 1;
             this.tabPageAssignPeople.Text = "Add people to workshop";
             this.tabPageAssignPeople.UseVisualStyleBackColor = true;
+            // 
+            // lbTeacher
+            // 
+            this.lbTeacher.AutoSize = true;
+            this.lbTeacher.Location = new System.Drawing.Point(25, 24);
+            this.lbTeacher.Name = "lbTeacher";
+            this.lbTeacher.Size = new System.Drawing.Size(0, 22);
+            this.lbTeacher.TabIndex = 17;
             // 
             // gbxFilterPeople
             // 
@@ -330,27 +338,27 @@ namespace WorkshopManagementApp
             this.cbFilterPeople.Text = "Choose students/teachers...";
             this.cbFilterPeople.SelectedIndexChanged += new System.EventHandler(this.cbFilterPeople_SelectedIndexChanged);
             // 
-            // btnAssignAsStudent
+            // btnAddParticipant
             // 
-            this.btnAssignAsStudent.Location = new System.Drawing.Point(629, 468);
-            this.btnAssignAsStudent.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnAssignAsStudent.Name = "btnAssignAsStudent";
-            this.btnAssignAsStudent.Size = new System.Drawing.Size(330, 40);
-            this.btnAssignAsStudent.TabIndex = 11;
-            this.btnAssignAsStudent.Text = "Add Participant to workshop";
-            this.btnAssignAsStudent.UseVisualStyleBackColor = true;
-            this.btnAssignAsStudent.Click += new System.EventHandler(this.btnAssignAsStudent_Click);
+            this.btnAddParticipant.Location = new System.Drawing.Point(629, 468);
+            this.btnAddParticipant.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnAddParticipant.Name = "btnAddParticipant";
+            this.btnAddParticipant.Size = new System.Drawing.Size(330, 40);
+            this.btnAddParticipant.TabIndex = 11;
+            this.btnAddParticipant.Text = "Add Participant to workshop";
+            this.btnAddParticipant.UseVisualStyleBackColor = true;
+            this.btnAddParticipant.Click += new System.EventHandler(this.btnAddParticipant_Click);
             // 
-            // btnAssignAsTeacher
+            // btnAddTeacher
             // 
-            this.btnAssignAsTeacher.Location = new System.Drawing.Point(215, 468);
-            this.btnAssignAsTeacher.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnAssignAsTeacher.Name = "btnAssignAsTeacher";
-            this.btnAssignAsTeacher.Size = new System.Drawing.Size(330, 40);
-            this.btnAssignAsTeacher.TabIndex = 10;
-            this.btnAssignAsTeacher.Text = "Add Teacher to workshop";
-            this.btnAssignAsTeacher.UseVisualStyleBackColor = true;
-            this.btnAssignAsTeacher.Click += new System.EventHandler(this.btnAssignAsTeacher_Click);
+            this.btnAddTeacher.Location = new System.Drawing.Point(215, 468);
+            this.btnAddTeacher.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnAddTeacher.Name = "btnAddTeacher";
+            this.btnAddTeacher.Size = new System.Drawing.Size(330, 40);
+            this.btnAddTeacher.TabIndex = 10;
+            this.btnAddTeacher.Text = "Add Teacher to workshop";
+            this.btnAddTeacher.UseVisualStyleBackColor = true;
+            this.btnAddTeacher.Click += new System.EventHandler(this.btnAddTeacher_Click);
             // 
             // lbxPeople
             // 
@@ -377,6 +385,33 @@ namespace WorkshopManagementApp
             this.tabPageManageParticipants.TabIndex = 2;
             this.tabPageManageParticipants.Text = "Manage teacher/participants";
             this.tabPageManageParticipants.UseVisualStyleBackColor = true;
+            // 
+            // gbxFilterParticipants
+            // 
+            this.gbxFilterParticipants.Controls.Add(this.cbFilterParticipants);
+            this.gbxFilterParticipants.Location = new System.Drawing.Point(196, 49);
+            this.gbxFilterParticipants.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.gbxFilterParticipants.Name = "gbxFilterParticipants";
+            this.gbxFilterParticipants.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.gbxFilterParticipants.Size = new System.Drawing.Size(759, 101);
+            this.gbxFilterParticipants.TabIndex = 16;
+            this.gbxFilterParticipants.TabStop = false;
+            this.gbxFilterParticipants.Text = "Show teacher/participants";
+            // 
+            // cbFilterParticipants
+            // 
+            this.cbFilterParticipants.FormattingEnabled = true;
+            this.cbFilterParticipants.Items.AddRange(new object[] {
+            "All",
+            "Teacher",
+            "Participants"});
+            this.cbFilterParticipants.Location = new System.Drawing.Point(219, 47);
+            this.cbFilterParticipants.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.cbFilterParticipants.Name = "cbFilterParticipants";
+            this.cbFilterParticipants.Size = new System.Drawing.Size(300, 30);
+            this.cbFilterParticipants.TabIndex = 13;
+            this.cbFilterParticipants.Text = "All";
+            this.cbFilterParticipants.SelectedIndexChanged += new System.EventHandler(this.cbFilterParticipants_SelectedIndexChanged);
             // 
             // btnViewEnrollmentDetails
             // 
@@ -412,41 +447,6 @@ namespace WorkshopManagementApp
             this.lbxParticipants.Size = new System.Drawing.Size(759, 304);
             this.lbxParticipants.TabIndex = 12;
             // 
-            // lbTeacher
-            // 
-            this.lbTeacher.AutoSize = true;
-            this.lbTeacher.Location = new System.Drawing.Point(25, 24);
-            this.lbTeacher.Name = "lbTeacher";
-            this.lbTeacher.Size = new System.Drawing.Size(0, 22);
-            this.lbTeacher.TabIndex = 17;
-            // 
-            // gbxFilterParticipants
-            // 
-            this.gbxFilterParticipants.Controls.Add(this.cbFilterParticipants);
-            this.gbxFilterParticipants.Location = new System.Drawing.Point(196, 49);
-            this.gbxFilterParticipants.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.gbxFilterParticipants.Name = "gbxFilterParticipants";
-            this.gbxFilterParticipants.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.gbxFilterParticipants.Size = new System.Drawing.Size(759, 101);
-            this.gbxFilterParticipants.TabIndex = 16;
-            this.gbxFilterParticipants.TabStop = false;
-            this.gbxFilterParticipants.Text = "Show teacher/participants";
-            // 
-            // cbFilterParticipants
-            // 
-            this.cbFilterParticipants.FormattingEnabled = true;
-            this.cbFilterParticipants.Items.AddRange(new object[] {
-            "All",
-            "Teacher",
-            "Participants"});
-            this.cbFilterParticipants.Location = new System.Drawing.Point(219, 47);
-            this.cbFilterParticipants.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.cbFilterParticipants.Name = "cbFilterParticipants";
-            this.cbFilterParticipants.Size = new System.Drawing.Size(300, 30);
-            this.cbFilterParticipants.TabIndex = 13;
-            this.cbFilterParticipants.Text = "All";
-            this.cbFilterParticipants.SelectedIndexChanged += new System.EventHandler(this.cbFilterParticipants_SelectedIndexChanged);
-            // 
             // EditWorkshopForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
@@ -466,8 +466,8 @@ namespace WorkshopManagementApp
             this.tabPageAssignPeople.PerformLayout();
             this.gbxFilterPeople.ResumeLayout(false);
             this.tabPageManageParticipants.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.gbxFilterParticipants.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -496,8 +496,8 @@ namespace WorkshopManagementApp
         private System.Windows.Forms.Label lbTitle;
         private System.Windows.Forms.TextBox tbxId;
         private System.Windows.Forms.Label lbId;
-        private System.Windows.Forms.Button btnAssignAsStudent;
-        private System.Windows.Forms.Button btnAssignAsTeacher;
+        private System.Windows.Forms.Button btnAddParticipant;
+        private System.Windows.Forms.Button btnAddTeacher;
         private System.Windows.Forms.ListBox lbxPeople;
         private System.Windows.Forms.Button btnRemoveParticipant;
         private System.Windows.Forms.ListBox lbxParticipants;

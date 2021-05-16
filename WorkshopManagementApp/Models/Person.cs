@@ -1,11 +1,12 @@
-﻿    using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
-    using System.Text.RegularExpressions;
-    using CustomExceptions;
+using System.Text.RegularExpressions;
+using CustomExceptions;
 
-    namespace Models
+namespace Models
 {
+    [Serializable]
     public abstract class Person
     {
         private string fname;
