@@ -6,7 +6,7 @@ namespace Models
 {
     public abstract class WorkshopPerson
     {
-        public int Id
+        public string Id
         {
             get;
             set;
@@ -24,14 +24,18 @@ namespace Models
             set;
         }
 
-        protected WorkshopPerson(int id, Workshop workshop, Person person)
+        protected WorkshopPerson(Workshop workshop, Person person)
         {
-            this.Id = id;
+            this.Id = $"{workshop.Id}-{person.Pcn}";
             this.Workshop = workshop;
             this.Person = person;
         }
-        
 
+
+        public override string ToString()
+        {
+            return $"Workshop: {Workshop.Title};";
+        }
 
     }
 }

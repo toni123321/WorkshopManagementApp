@@ -542,7 +542,7 @@ namespace WorkshopManagementApp
             // lbEmail
             // 
             this.lbEmail.AutoSize = true;
-            this.lbEmail.Location = new System.Drawing.Point(128, 217);
+            this.lbEmail.Location = new System.Drawing.Point(128, 214);
             this.lbEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbEmail.Name = "lbEmail";
             this.lbEmail.Size = new System.Drawing.Size(65, 22);
@@ -571,7 +571,7 @@ namespace WorkshopManagementApp
             // lbLName
             // 
             this.lbLName.AutoSize = true;
-            this.lbLName.Location = new System.Drawing.Point(85, 167);
+            this.lbLName.Location = new System.Drawing.Point(85, 164);
             this.lbLName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbLName.Name = "lbLName";
             this.lbLName.Size = new System.Drawing.Size(108, 22);
@@ -607,7 +607,7 @@ namespace WorkshopManagementApp
             // lbPcn
             // 
             this.lbPcn.AutoSize = true;
-            this.lbPcn.Location = new System.Drawing.Point(136, 66);
+            this.lbPcn.Location = new System.Drawing.Point(128, 69);
             this.lbPcn.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbPcn.Name = "lbPcn";
             this.lbPcn.Size = new System.Drawing.Size(57, 22);
@@ -666,6 +666,7 @@ namespace WorkshopManagementApp
             this.btnViewEnrollmentsPerson.TabIndex = 12;
             this.btnViewEnrollmentsPerson.Text = "View enrollments";
             this.btnViewEnrollmentsPerson.UseVisualStyleBackColor = true;
+            this.btnViewEnrollmentsPerson.Click += new System.EventHandler(this.btnViewEnrollmentsPerson_Click);
             // 
             // btnRemovePerson
             // 

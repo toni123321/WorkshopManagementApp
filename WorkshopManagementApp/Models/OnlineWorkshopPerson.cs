@@ -11,9 +11,14 @@ namespace Models
             get;
             set;
         }
-        public OnlineWorkshopPerson(int id, Workshop workshop, Person person, string loginCode) : base(id, workshop, person)
+        public OnlineWorkshopPerson(Workshop workshop, Person person, string loginCode) : base(workshop, person)
         {
             this.LoginCode = loginCode;
+        }
+
+        public override string ToString()
+        {
+            return $"Online: {base.ToString()} Login code: {LoginCode}";
         }
     }
 }

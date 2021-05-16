@@ -11,13 +11,18 @@ namespace Models
             get;
             set;
         }
-        public OnsiteWorkshopPerson(int id, Workshop workshop, Person person, int seatNr) : base(id, workshop, person)
+        public OnsiteWorkshopPerson(Workshop workshop, Person person, int seatNr) : base(workshop, person)
         {
             this.SeatNr = seatNr;
         }
-        public OnsiteWorkshopPerson(int id, Workshop workshop, Person person) : base(id, workshop, person)
+        public OnsiteWorkshopPerson(Workshop workshop, Person person) : base(workshop, person)
         {
             this.SeatNr = 0;
+        }
+
+        public override string ToString()
+        {
+            return $"Onsite: {base.ToString()} Seat number: {SeatNr}";
         }
     }
 }
